@@ -1152,13 +1152,13 @@ def main():
     
     # 基本参数
     parser.add_argument('--log-file', type=str, 
-                        default='/Users/kazami/spparks/spparks-6Sep23/SPPARKS-for-Al2O3_TMA_H2O/AB_Surface/120/log.spparks',
+                        default='./log.spparks',
                         help='SPPARKS log file path')
     parser.add_argument('--model-file', type=str, 
-                        default='/Users/kazami/spparks/spparks-6Sep23/SPPARKS-for-Al2O3_TMA_H2O/AB_Surface/120/data_10X10.ald',
+                        default='/data.ald',
                         help='SPPARKS model file path')
     parser.add_argument('--output-dir', type=str, 
-                        default='/Users/kazami/spparks/spparks-6Sep23/SPPARKS-for-Al2O3_TMA_H2O/AB_Surface/120/plots',
+                        default='/plots',
                         help='Output directory for plots and data')
     parser.add_argument('--no-dash', action='store_true',
                         help='只生成图表文件，不启动Dash服务器')
