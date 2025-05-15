@@ -927,26 +927,9 @@ void AppAldTMA::put_mask(int i) {
       if (isite >= 0 && echeck[isite] == 0) {
         echeck[isite] = 1;
         esites[nsites++] = isite;
-        coord[nnn] -= 10;
+        coord[nnn] -= 50;
           }
-      for (int sss = 0; sss < numneigh[nnn]; sss++){
-        int nnnn = neighbor[nnn][sss];
-        int isite = i2site[nnnn];
-        if (isite >= 0 && echeck[isite] == 0) {
-          echeck[isite] = 1;
-          esites[nsites++] = isite;
-          coord[nnnn] -= 0;
-        }
-        for (int ssss = 0; ssss < numneigh[nnnn]; ssss++){
-          int nnnnn = neighbor[nnnn][ssss];
-          int isite = i2site[nnnnn];
-          if (isite >= 0 && echeck[isite] == 0) {
-            echeck[isite] = 1;
-            esites[nsites++] = isite;
-            coord[nnnnn] -= 0;
-        }
-        }
-  }
+      
   }
   }
   // for (int s = 0; s < numneigh[i]; s++) {
@@ -1014,26 +997,9 @@ void AppAldTMA::remove_mask(int i) {
       if (isite >= 0 && echeck[isite] == 0) {
         echeck[isite] = 1;
         esites[nsites++] = isite;
-        coord[nnn] += 10;
+        coord[nnn] += 50;
           }
-      for (int sss = 0; sss < numneigh[nnn]; sss++){
-        int nnnn = neighbor[nnn][sss];
-        int isite = i2site[nnnn];
-        if (isite >= 0 && echeck[isite] == 0) {
-          echeck[isite] = 1;
-          esites[nsites++] = isite;
-          coord[nnnn] += 0;
-        }
-        for (int ssss = 0; ssss < numneigh[nnnn]; ssss++){
-          int nnnnn = neighbor[nnnn][ssss];
-          int isite = i2site[nnnnn];
-          if (isite >= 0 && echeck[isite] == 0) {
-            echeck[isite] = 1;
-            esites[nsites++] = isite;
-            coord[nnnnn] += 0;
-        }
-        }
-  }
+      
   }
   }
   // for (int s = 0; s < numneigh[i]; s++) {
