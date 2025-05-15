@@ -1155,10 +1155,10 @@ def main():
                         default='./log.spparks',
                         help='SPPARKS log file path')
     parser.add_argument('--model-file', type=str, 
-                        default='/data.ald',
+                        default='./data.ald',
                         help='SPPARKS model file path')
     parser.add_argument('--output-dir', type=str, 
-                        default='/plots',
+                        default='./plots',
                         help='Output directory for plots and data')
     parser.add_argument('--no-dash', action='store_true',
                         help='只生成图表文件，不启动Dash服务器')
