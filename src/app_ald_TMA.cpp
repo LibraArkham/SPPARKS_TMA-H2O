@@ -645,6 +645,7 @@ void AppAldTMA::site_event(int i, class RandomPark *random)
   else if (rstyle == 3) {
     if (elcoord_i == OH && (element[i] == OHAlaX3 || element[i] == OHAlbX3 )) {
       put_mask(i);
+      put_mask_2(i);
      }
      
   }
@@ -652,6 +653,7 @@ void AppAldTMA::site_event(int i, class RandomPark *random)
   else if (rstyle == 4) {
     if (elcoord_g == OAlaX2 || OAlbX2 && element[g] == OAlaX || OAlbX) {
       remove_mask(g);
+      remove_mask_2(g);
     }
     }
  
@@ -851,87 +853,6 @@ void AppAldTMA::grow_reactions(int rstyle)
 }
 
 /* ----------------------------------------------------------------------
-   update c.n. for Hf and O, put and remove mask for relative sites
-------------------------------------------------------------------------- */
-//void AppAldTMA::update_coord(int elcoord, int i, int j, int k, int which)
-//{ 
-  //type1
-  
-//    if ((elcoord == O  && element[i] == TaX5O) && (j == -1)) 
-//    {//Adsorption of TaX5
-//      coord[i]++;
-//      //put_mask(i);
-//    }
-//    else if ((elcoord == TaX5O && element[i] == O ) && (j == -1))
-//    {//Desorption of TaX5
-//      coord[i]--;
-//      //remove_mask(i);
-//      count_coordO(i);
-//    }
-//    else if ((elcoord == Ta  && element[i] == OTa ) && (j == -1))
-//    {//Adsorption of oxygen
-//      coord[i]++;
-//    }
-//    else if ((elcoord == OTa && element[i] == Ta ) && (j == -1))
-//    {//Desorption of oxygen
-//      coord[i]--;
-//    }
-//    else if ((elcoord == TaX  && element[i] == Ta ) && (j == -1))
-//    {//Oxidation
-//      coord[i]++;
-//    }
-//    
-//    else if ((elcoord == TaX4O  && element[i] == TaO ) && (j == -1))
-//    {//Oxidation
-//      coord[i]++;
-//   }
-  //type2
-  /*else if (j!=-1 && k==-1) {
-    count_coord(i);
-    count_coord(j);
-  }*/
-  //type3
-  
-    
-//    else if ((elcoord == VACANCY) && (element[i] == TaO) && ( element[j] == O)) {
-//     //densification
-//        if (element[i] == TaO){
-//       	//remove_mask(i, j); // Remove mask from previous O site
-//      }
-//        count_coord(j, i);
-//        if (element[i] == TaO){
-//            //put_mask(i); // Put mask on new Zn site
-//        }}
-//    else if ((elcoord == OTa) && (element[i] == Ta) && (element[j] == O) && ( k == -1))
-//  {//oxygen densification
-//    count_coord(i,j);
-//    count_coordO(j);
-//  }
-
-//    else if ((elcoord == Ta) && (element[i] == VACANCY) && (element[j] == TaO))
-//  {//TaX4 Reverse densification
-    //remove_mask(i, j);
-//		count_coord(i, j);
-		//put_mask(j);
-//  }
-  
-//    else if ((elcoord == O) && (element[i] == VACANCY) && (element[j] == OTa))
-//  {//oxygen Reverse densification
-//		count_coord(i,j);
-//		coord[j]++;
-//  }
-
-//    else if ((elcoord ==TaX5O) && (element[i] == TaX4O) && (element[j] == TaX)) 
-//  {//TaX5 Dissociation
-  //remove_mask(i);
-  //put_mask(i);
-//  coord[j]++;
-  //put_mask(j);
-//  }
-  
-//}
-
-/* ----------------------------------------------------------------------
    count c.n after densification
 ------------------------------------------------------------------------- */
 void AppAldTMA::count_coord(int i) // i: Oxygen species(does not necessarily hold)
@@ -1036,22 +957,38 @@ void AppAldTMA::put_mask(int i) {
   // std::cout << "put mask " << i << std::endl;
 }
 
-void AppAldTMA::put_mask_2(int i)  {
+/* ----------------------------------------------------------------------
+   将 mask 放置到同 z 平面的最近 6 个近邻上
+   使用预先计算的 same_z_neighbors 数组
+------------------------------------------------------------------------- */
+void AppAldTMA::put_mask_2(int i) {
   int nsites = 0;
   int isite = i2site[i];
+  
+  // 标记中心位点
   echeck[isite] = 1;
   esites[nsites++] = isite;
-  for (int s = 0; s < numneigh[i]; s++) {
-    int nn = neighbor[i][s];
-    int isite = i2site[nn];
-    // std::cout<<"isite:"<<isite<<std::endl;
-    // std::cout<<"echeck:"<<echeck[isite]<<std::endl;
+  
+  // 遍历预先计算的同 z 平面近邻
+  // 这些近邻已经按 xy 平面距离排序
+  for (int j = 0; j < num_same_z_neighbors[i]; j++) {
+    int nn = same_z_neighbors[i][j];
+    isite = i2site[nn];
+    
     if (isite >= 0 && echeck[isite] == 0) {
-        echeck[isite] = 1;
-        esites[nsites++] = isite;
-        coord[nn] -= 10;
+      // 标记位点为已处理
+      echeck[isite] = 1;
+      esites[nsites++] = isite;
+      
+      // 对位点的 coord 值减去 10
+      coord[nn] -= 10;
     }
-    for (int m = 0; m < nsites; m++)  {echeck[esites[m]] = 0; esites[m]=0;}
+  }
+  
+  // 重置 echeck 数组，为下次计算做准备
+  for (int m = 0; m < nsites; m++) {
+    echeck[esites[m]] = 0;
+    esites[m] = 0;
   }
 }
 
@@ -1110,16 +1047,30 @@ void AppAldTMA::remove_mask(int i) {
 void AppAldTMA::remove_mask_2(int i) {
   int nsites = 0;
   int isite = i2site[i];
+  
+  // 标记中心位点
   echeck[isite] = 1;
   esites[nsites++] = isite;
-  for (int s = 0; s < numneigh[i]; s++) {
-    int nn = neighbor[i][s];
-    int isite = i2site[nn];
+  
+  // 遍历预先计算的同 z 平面近邻
+  // 这些近邻已经按 xy 平面距离排序
+  for (int j = 0; j < num_same_z_neighbors[i]; j++) {
+    int nn = same_z_neighbors[i][j];
+    isite = i2site[nn];
+    
     if (isite >= 0 && echeck[isite] == 0) {
-        echeck[isite] = 1;
-        esites[nsites++] = isite;
-        coord[nn] += 10;
+      // 标记位点为已处理
+      echeck[isite] = 1;
+      esites[nsites++] = isite;
+      
+      // 对位点的 coord 值减去 10
+      coord[nn] += 10;
     }
   }
-  for (int m = 0; m < nsites; m++)  {echeck[esites[m]] = 0; esites[m]=0;}
+  
+  // 重置 echeck 数组，为下次计算做准备
+  for (int m = 0; m < nsites; m++) {
+    echeck[esites[m]] = 0;
+    esites[m] = 0;
+  }
 }
