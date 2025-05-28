@@ -408,22 +408,22 @@ void AppAldTMA::setup_app()
   if (temperature == 0.0)
     error->all(FLERR,"Temperature cannot be 0.0 for app_ald");
   for (int m = 0; m < none; m++) {
-    spropensity[m] = sA[m]*pow(temperature,sexpon[m])*exp(-srate[m]/temperature);
+    spropensity[m] = sA[m]*pow(temperature,sexpon[m])*exp(-srate[m]/(temperature*8.617333262e-5));
     scount[m] = 0;
   if (spropensity[m] == 0.0) error->warning(FLERR," spropensity cannot be 0.0 for app_ald");
   }
   for (int m = 0; m < ntwo; m++) {
-    dpropensity[m] = dA[m]*pow(temperature,dexpon[m])*exp(-drate[m]/temperature);
+    dpropensity[m] = dA[m]*pow(temperature,dexpon[m])*exp(-drate[m]/(temperature*8.617333262e-5));
     dcount[m] = 0;
   if (dpropensity[m] == 0.0) error->warning(FLERR,"dpropensity cannot be 0.0 for app_ald");
   }
   for (int m = 0; m < nthree; m++) {
-    vpropensity[m] = vA[m]*pow(temperature,vexpon[m])*exp(-vrate[m]/temperature);
+    vpropensity[m] = vA[m]*pow(temperature,vexpon[m])*exp(-vrate[m]/(temperature*8.617333262e-5));
     vcount[m] = 0;
   if (vpropensity[m] == 0.0) error->warning(FLERR,"vpropensity cannot be 0.0 for app_ald");
   }
   for (int m = 0; m < nfour; m++) {
-    fpropensity[m] = fA[m]*pow(temperature,fexpon[m])*exp(-frate[m]/temperature);
+    fpropensity[m] = fA[m]*pow(temperature,fexpon[m])*exp(-frate[m]/(temperature*8.617333262e-5));
     fcount[m] = 0;
   if (fpropensity[m] == 0.0) error->warning(FLERR,"fpropensity cannot be 0.0 for app_ald");
   }
