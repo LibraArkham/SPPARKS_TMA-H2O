@@ -199,7 +199,6 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
 
       dA[ntwo] = atof(arg[5]);
       dexpon[ntwo] = atoi(arg[6]);
-      if (dexpon[ntwo] != 0.0) error->warning(FLERR,"Illegal expon command2");
       drate[ntwo] = atof(arg[7]);
       dcoord[ntwo] = atoi(arg[8]);
       dpresson[ntwo] = atoi(arg[9]);
