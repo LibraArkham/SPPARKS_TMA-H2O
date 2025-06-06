@@ -104,7 +104,7 @@ class AppAldTMA : public AppLattice {
   void put_mask(int);
   void put_mask_2(int);
   void update_coord(int,int,int,int,int);
-  
+  void output_event_propensities();  // 输出事件propensity的函数
   // 添加新的函数声明
   void precompute_same_z_neighbors();
   double horizontal_distance(int i, int j);

@@ -412,7 +412,7 @@ void AppAldTMA::setup_app()
   for (int m = 0; m < none; m++) {
     spropensity[m] = sA[m]*pow(temperature,sexpon[m])*exp(-srate[m]/(temperature*8.617333262e-5));
     scount[m] = 0;
-  if (spropensity[m] == 0.0) error->warning(FLERR," spropensity cannot be 0.0 for app_ald");
+  if (spropensity[m] == 0.0) error->warning(FLERR,"spropensity cannot be 0.0 for app_ald");
   }
   for (int m = 0; m < ntwo; m++) {
     dpropensity[m] = dA[m]*pow(temperature,dexpon[m])*exp(-drate[m]/(temperature*8.617333262e-5));
@@ -429,6 +429,9 @@ void AppAldTMA::setup_app()
     fcount[m] = 0;
   if (fpropensity[m] == 0.0) error->warning(FLERR,"fpropensity cannot be 0.0 for app_ald");
   }
+
+    output_event_propensities();
+  
 }
 
 /* ----------------------------------------------------------------------
@@ -563,6 +566,106 @@ double AppAldTMA::site_propensity(int i)
   return proball;
 }
 
+/* ----------------------------------------------------------------------
+   输出所有事件的propensity值到终端和日志文件
+------------------------------------------------------------------------- */
+void AppAldTMA::output_event_propensities()
+{
+  // 输出到屏幕
+  if (screen) {
+    fprintf(screen, "\n=== Event Propensities at Temperature %.2f K ===\n", temperature);
+    
+    // 输出Type I事件 (s1, s2, ...)
+    if (none > 0) {
+      fprintf(screen, "Type I Events: ");
+      for (int m = 0; m < none; m++) {
+        fprintf(screen, "s%d:%.3e ", m+1, spropensity[m]);
+        if ((m+1) % 5 == 0 && m != none-1) fprintf(screen, "\n               ");
+      }
+      fprintf(screen, "\n");
+    }
+    
+    // 输出Type II事件 (d1, d2, ...)
+    if (ntwo > 0) {
+      fprintf(screen, "Type II Events: ");
+      for (int m = 0; m < ntwo; m++) {
+        fprintf(screen, "d%d:%.3e ", m+1, dpropensity[m]);
+        if ((m+1) % 5 == 0 && m != ntwo-1) fprintf(screen, "\n                ");
+      }
+      fprintf(screen, "\n");
+    }
+    
+    // 输出Type III事件 (v1, v2, ...)
+    if (nthree > 0) {
+      fprintf(screen, "Type III Events: ");
+      for (int m = 0; m < nthree; m++) {
+        fprintf(screen, "v%d:%.3e ", m+1, vpropensity[m]);
+        if ((m+1) % 5 == 0 && m != nthree-1) fprintf(screen, "\n                 ");
+      }
+      fprintf(screen, "\n");
+    }
+    
+    // 输出Type IV事件 (f1, f2, ...)
+    if (nfour > 0) {
+      fprintf(screen, "Type IV Events: ");
+      for (int m = 0; m < nfour; m++) {
+        fprintf(screen, "f%d:%.3e ", m+1, fpropensity[m]);
+        if ((m+1) % 5 == 0 && m != nfour-1) fprintf(screen, "\n                ");
+      }
+      fprintf(screen, "\n");
+    }
+    
+    fprintf(screen, "===============================================\n\n");
+  }
+  
+  // 输出到日志文件
+  if (logfile) {
+    fprintf(logfile, "\n=== Event Propensities at Temperature %.2f K ===\n", temperature);
+    
+    // 输出Type I事件
+    if (none > 0) {
+      fprintf(logfile, "Type I Events: ");
+      for (int m = 0; m < none; m++) {
+        fprintf(logfile, "s%d:%.3e ", m+1, spropensity[m]);
+        if ((m+1) % 5 == 0 && m != none-1) fprintf(logfile, "\n               ");
+      }
+      fprintf(logfile, "\n");
+    }
+    
+    // 输出Type II事件
+    if (ntwo > 0) {
+      fprintf(logfile, "Type II Events: ");
+      for (int m = 0; m < ntwo; m++) {
+        fprintf(logfile, "d%d:%.3e ", m+1, dpropensity[m]);
+        if ((m+1) % 5 == 0 && m != ntwo-1) fprintf(logfile, "\n                ");
+      }
+      fprintf(logfile, "\n");
+    }
+    
+    // 输出Type III事件
+    if (nthree > 0) {
+      fprintf(logfile, "Type III Events: ");
+      for (int m = 0; m < nthree; m++) {
+        fprintf(logfile, "v%d:%.3e ", m+1, vpropensity[m]);
+        if ((m+1) % 5 == 0 && m != nthree-1) fprintf(logfile, "\n                 ");
+      }
+      fprintf(logfile, "\n");
+    }
+    
+    // 输出Type IV事件
+    if (nfour > 0) {
+      fprintf(logfile, "Type IV Events: ");
+      for (int m = 0; m < nfour; m++) {
+        fprintf(logfile, "f%d:%.3e ", m+1, fpropensity[m]);
+        if ((m+1) % 5 == 0 && m != nfour-1) fprintf(logfile, "\n                ");
+      }
+      fprintf(logfile, "\n");
+    }
+    
+    fprintf(logfile, "===============================================\n\n");
+    fflush(logfile);  // 确保立即写入文件
+  }
+}
 /* ----------------------------------------------------------------------
    KMC method
    choose and perform an event for site
