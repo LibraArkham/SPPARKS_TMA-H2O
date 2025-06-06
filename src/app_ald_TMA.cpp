@@ -11,7 +11,7 @@
 
 using namespace SPPARKS_NS;
 
-enum{VACANCY,O,OH,Ala,OHAlaX3,OAlaX2,OAlaX2H2O,OAlaXOH,OAlaX,OAlaOH,OAlaOH2,AlaOH,AlaOH2,Alb,OHAlbX3,OAlbX2,OAlbX2H2O,OAlbXOH,OAlbX,OAlbOH,OAlbOH2,AlbOH,AlbOH2,OAla,OAlb};
+enum{VACANCY,O,OH,Ala,OHAlaX3,OAlaX2,OAlaX2H2O,OAlaXOH,OAlaX,OAlaOH,OAlaOH2,AlaOH,AlaOH2,Alb,OHAlbX3,OAlbX2,OAlbX2H2O,OAlbXOH,OAlbX,OAlbOH,OAlbOH2,AlbOH,AlbOH2,OAla,OAlb,H2O};
 
 
 #define DELTAEVENT 100000
@@ -145,6 +145,8 @@ int AppAldTMA::species_to_enum(const char* species_name) {
   else if (strcmp(species_name,"AlbOH2") == 0) return AlbOH2;
   else if (strcmp(species_name,"OAla") == 0) return OAla;
   else if (strcmp(species_name,"OAlb") == 0) return OAlb;
+  else if (strcmp(species_name,"H2O") == 0) return H2O;
+
   return -1; // 返回-1表示未找到匹配的物种
 }
 

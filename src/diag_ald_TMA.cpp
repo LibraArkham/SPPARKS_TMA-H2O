@@ -25,7 +25,7 @@
 using namespace SPPARKS_NS;
 
 
-enum{VACANCY,O,OH,Ala,OHAlaX3,OAlaX2,OAlaX2H2O,OAlaXOH,OAlaX,OAlaOH,OAlaOH2,AlaOH,AlaOH2,Alb,OHAlbX3,OAlbX2,OAlbX2H2O,OAlbXOH,OAlbX,OAlbOH,OAlbOH2,AlbOH,AlbOH2,QCM,EVENTS,ONE,TWO,THREE,FOUR,OHG,XG,TYPE1_TOTAL,TYPE2_TOTAL,TYPE3_TOTAL,TYPE4_TOTAL,ALL_EVENTS_TOTAL,OAla,OAlb,ALA_TOTAL,ALB_TOTAL};
+enum{VACANCY,O,OH,Ala,OHAlaX3,OAlaX2,OAlaX2H2O,OAlaXOH,OAlaX,OAlaOH,OAlaOH2,AlaOH,AlaOH2,Alb,OHAlbX3,OAlbX2,OAlbX2H2O,OAlbXOH,OAlbX,OAlbOH,OAlbOH2,AlbOH,AlbOH2,H2O,QCM,EVENTS,ONE,TWO,THREE,FOUR,OHG,XG,TYPE1_TOTAL,TYPE2_TOTAL,TYPE3_TOTAL,TYPE4_TOTAL,ALL_EVENTS_TOTAL,OAla,OAlb,ALA_TOTAL,ALB_TOTAL};
 
 
 /* ---------------------------------------------------------------------- */
@@ -107,6 +107,7 @@ void DiagAldTMA::init()
       else if (strcmp(list[i],"AlbOH2") == 0) which[i] = AlbOH2;
       else if (strcmp(list[i],"OAla") == 0) which[i] = OAla;
       else if (strcmp(list[i],"OAlb") == 0) which[i] = OAlb;
+      else if (strcmp(list[i],"H2O") == 0) which[i] = H2O;
       else if (strcmp(list[i],"events") == 0) which[i] = EVENTS;
       else if (strcmp(list[i],"QCM") == 0) which[i] = QCM;
       else if (strcmp(list[i],"OHG") == 0) which[i] = OHG;
@@ -163,7 +164,7 @@ void DiagAldTMA::compute()
     sites[OAlaOH] = 0; sites[OAlaOH2] = 0; sites[AlaOH] = 0; sites[AlaOH2] = 0;
     sites[Alb] = 0; sites[OHAlbX3] = 0; sites[OAlbX2] = 0; sites[OAlbX2H2O] = 0;
     sites[OAlbXOH] = 0; sites[OAlbX] = 0; sites[OAlbOH] = 0; sites[OAlbOH2] = 0;
-    sites[AlbOH] = 0; sites[AlbOH2] = 0; sites[OAla] = 0; sites[OAlb] = 0;
+    sites[AlbOH] = 0; sites[AlbOH2] = 0; sites[OAla] = 0; sites[OAlb] = 0; sites[H2O] = 0;
     int *element = appaldTMA->element;
     int nlocal = appaldTMA->nlocal;
     for (int i = 0; i < nlocal; i++) sites[element[i]]++;
@@ -195,6 +196,7 @@ void DiagAldTMA::compute()
     else if (which[i] == AlbOH2) ivalue = sites[AlbOH2];
     else if (which[i] == OAla) ivalue = sites[OAla];
     else if (which[i] == OAlb) ivalue = sites[OAlb];
+    else if (which[i] == H2O) ivalue = sites[H2O];
     else if (which[i] == EVENTS) ivalue = appaldTMA->nevents;
     else if (which[i] == ONE) ivalue = appaldTMA->scount[index[i]];
     else if (which[i] == TWO) ivalue = appaldTMA->dcount[index[i]];
@@ -205,7 +207,7 @@ void DiagAldTMA::compute()
                                       60*sites[OAlaOH] + 77*sites[OAlaOH2] + 44*sites[AlaOH] + 61*sites[AlaOH2] + 
                                       27*sites[Alb] + 89*sites[OHAlbX3] + 73*sites[OAlbX2] + 91*sites[OAlbX2H2O] + 
                                       75*sites[OAlbXOH] + 58*sites[OAlbX] + 60*sites[OAlbOH] + 77*sites[OAlbOH2] + 
-                                      44*sites[AlbOH] + 61*sites[AlbOH2] + 43*sites[OAla] + 43*sites[OAlb]; 
+                                      44*sites[AlbOH] + 61*sites[AlbOH2] + 43*sites[OAla] + 43*sites[OAlb] + 18*sites[H2O]; 
     else if (which[i] == OHG) ivalue = sites[OH]+sites[OHAlaX3]+sites[OAlaXOH]+sites[OAlaOH]+2*sites[OAlaOH2]+sites[AlaOH]+2*sites[AlaOH2]+sites[OHAlbX3]+sites[OAlbXOH]+sites[OAlbOH]+2*sites[OAlbOH2]+sites[AlbOH]+2*sites[AlbOH2];
     else if (which[i] == XG) ivalue = 3*sites[OHAlaX3]+2*sites[OAlaX2]+2*sites[OAlaX2H2O]+sites[OAlaXOH]+sites[OAlaX]+3*sites[OHAlbX3]+2*sites[OAlbX2]+2*sites[OAlbX2H2O]+sites[OAlbXOH]+sites[OAlbX];
     else if (which[i] == TYPE1_TOTAL) {
