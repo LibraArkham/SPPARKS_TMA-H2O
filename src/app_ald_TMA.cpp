@@ -57,6 +57,9 @@ AppAldTMA::AppAldTMA(SPPARKS *spk, int narg, char **arg) :
   scount = dcount = vcount = fcount = NULL;
   sA = dA = vA = fA = NULL;
   scoord = dcoord = vcoord = fcoord = NULL;
+  dcoord2 = NULL;
+  vcoord2 = NULL; 
+  fcoord2 = NULL;
   sexpon = dexpon = vexpon = fexpon = NULL;
   spresson = dpresson = vpresson = fpresson = NULL;
   same_z_neighbors = NULL;
@@ -110,6 +113,9 @@ AppAldTMA::~AppAldTMA()
   memory->sfree(dpresson);
   memory->sfree(vpresson);
   memory->sfree(fpresson);
+  memory->sfree(dcoord2);
+  memory->sfree(vcoord2);
+  memory->sfree(fcoord2);
   if (same_z_neighbors) {
     for (int i = 0; i < nlocal; i++)
       delete [] same_z_neighbors[i];
@@ -117,7 +123,28 @@ AppAldTMA::~AppAldTMA()
   }
   delete [] num_same_z_neighbors;
 }
-
+/* ----------------------------------------------------------------------
+   检查coord是否匹配，支持"all"参数
+------------------------------------------------------------------------- */
+bool AppAldTMA::coord_matches(int site_coord, int required_coord)
+{
+  // 如果required_coord是COORD_ALL，则匹配任何coord
+  if (required_coord == COORD_ALL) return true;
+  
+  // 否则进行精确匹配
+  return (site_coord == required_coord);
+}
+/* ----------------------------------------------------------------------
+   解析coord字符串，支持数字和"all"关键字
+   返回：数字值或COORD_ALL(-999)
+------------------------------------------------------------------------- */
+int AppAldTMA::parse_coord_value(const char* coord_str) {
+  if (strcmp(coord_str, "all") == 0 || strcmp(coord_str, "ALL") == 0) {
+    return COORD_ALL;
+  } else {
+    return atoi(coord_str);
+  }
+}
 /* ---------------------------------------------------------------------- */
 int AppAldTMA::species_to_enum(const char* species_name) {
   if (strcmp(species_name,"VAC") == 0) return VACANCY;
@@ -158,10 +185,11 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
     grow_reactions(rstyle);
 
     if (rstyle == 1) {
+      // Type I事件：支持coord="all"
       if (narg != 9) error->all(FLERR,"Illegal event arg command");
-      //type I
+      
       int input_species = species_to_enum(arg[1]);
-      if (input_species < 0) error->all(FLERR,"Illegal event arg1 command");
+      if (input_species < 0) error->all(FLERR,"Illegal event command");
       sinput[none] = input_species;
 
       int output_species = species_to_enum(arg[2]);
@@ -169,17 +197,15 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
       soutput[none] = output_species;
 
       sA[none] = atof(arg[3]);
-      if (sA[none] == 0.0) error->warning(FLERR,"Illegal coef during reading command");
       sexpon[none] = atoi(arg[4]);
       srate[none] = atof(arg[5]);
-      scoord[none] = atoi(arg[6]);
+      scoord[none] = parse_coord_value(arg[6]);  // 使用新的解析函数
       spresson[none] = atoi(arg[7]);
-
       none++;
       
-    //type II 
     } else if (rstyle == 2) {
-      if (narg != 11) error->all(FLERR,"Illegal event command");
+      // Type II事件：支持两个coord参数，都可以是"all"
+      if (narg != 12) error->all(FLERR,"Illegal event command - Type II needs 12 args");
 
       int input_species1 = species_to_enum(arg[1]);
       if (input_species1 < 0) error->all(FLERR,"Illegal event command");
@@ -200,13 +226,14 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
       dA[ntwo] = atof(arg[5]);
       dexpon[ntwo] = atoi(arg[6]);
       drate[ntwo] = atof(arg[7]);
-      dcoord[ntwo] = atoi(arg[8]);
-      dpresson[ntwo] = atoi(arg[9]);
+      dcoord[ntwo] = parse_coord_value(arg[8]);   // 使用新的解析函数
+      dcoord2[ntwo] = parse_coord_value(arg[9]);  // 使用新的解析函数
+      dpresson[ntwo] = atoi(arg[10]);
       ntwo++;
       
-    //type III
     } else if (rstyle == 3) {
-      if (narg != 11) error->all(FLERR,"Illegal event command31");
+      // Type III事件：支持两个coord参数，都可以是"all"
+      if (narg != 12) error->all(FLERR,"Illegal event command31 - Type III needs 12 args");
 
       int input_species1 = species_to_enum(arg[1]);
       if (input_species1 < 0) error->all(FLERR,"Illegal event command32");
@@ -227,13 +254,14 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
       vA[nthree] = atof(arg[5]);
       vexpon[nthree] = atoi(arg[6]);
       vrate[nthree] = atof(arg[7]);
-      vcoord[nthree] = atoi(arg[8]);
-      vpresson[nthree] = atoi(arg[9]);
+      vcoord[nthree] = parse_coord_value(arg[8]);   // 使用新的解析函数
+      vcoord2[nthree] = parse_coord_value(arg[9]);  // 使用新的解析函数
+      vpresson[nthree] = atoi(arg[10]);
       nthree++;
       
-    //type IV
     } else if (rstyle == 4) {
-      if (narg != 11) error->all(FLERR,"Illegal event command");
+      // Type IV事件：支持两个coord参数，都可以是"all"
+      if (narg != 12) error->all(FLERR,"Illegal event command - Type IV needs 12 args");
 
       int input_species1 = species_to_enum(arg[1]);
       if (input_species1 < 0) error->all(FLERR,"Illegal event command");
@@ -251,15 +279,15 @@ void AppAldTMA::input_app(char *command, int narg, char **arg)
       if (output_species2 < 0) error->all(FLERR,"Illegal event command");
       foutput[nfour][1] = output_species2;
 
-
       fA[nfour] = atof(arg[5]);
       fexpon[nfour] = atoi(arg[6]);
       frate[nfour] = atof(arg[7]);
-      fcoord[nfour] = atoi(arg[8]);
-      fpresson[nfour] = atoi(arg[9]);
+      fcoord[nfour] = parse_coord_value(arg[8]);    // 使用新的解析函数
+      fcoord2[nfour] = parse_coord_value(arg[9]);   // 使用新的解析函数
+      fpresson[nfour] = atoi(arg[10]);
       nfour++;
-    } else error->all(FLERR,"Illegal event command43");
-  } 
+    }
+  }
   else if (strcmp(command,"pulse_time") == 0) {
     if (narg != 2) error->all(FLERR,"Illegal pulse time");
       T1 = atof(arg[0]);
@@ -451,117 +479,102 @@ double AppAldTMA::site_propensity(int i)
 {
   int j,k,m,l,o,p;
 
-
-   clear_events(i);
-  // std::cout<<"clear_events"<<std::endl;
+  clear_events(i);
   double proball = 0.0;
 
-
-  //type I, check species of sites and consider possible events
-
-  // count_coordO was added here to prevent adsorption of metal precursor
-  // on the low coordinate oxygen at sublayer
-
+  // Type I events (单分子反应)
   for (m = 0; m < none; m++) {
-    if (element[i] != sinput[m]) continue;
     int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
-    if ((coord[i] == scoord[m] || scoord[m] == -1) && (spresson[m] == pressureOn || spresson[m] == 0) && (coordi <= numneigh[i])) {
-      // std::cout<<"coord[i]"<<coord[i]<<std::endl;
-      // std::cout<<"numneigh[i]"<<numneigh[i]<<std::endl;
-	    add_event(i,1,m,spropensity[m],-1,-1,-1);
-	    proball += spropensity[m];
+    
+    // 修改coord检查，支持"all"
+    if (element[i] == sinput[m] && 
+        coord_matches(coord[i], scoord[m]) &&  // 使用新的检查函数
+        (spresson[m] == pressureOn || spresson[m] == 0) && 
+        (coordi <= numneigh[i])) {
+        
+      add_event(i,1,m,spropensity[m],-1,-1,-1);
+      proball += spropensity[m];
     }
-    //else if ((element[i]=TaX4O) && (spresson[m] == pressureOn || spresson[m] == 0) && (coordi <= numneigh[i])) {
-    //  add_event(i,1,m,spropensity[m],-1,-1,-1);
-	  //  proball += spropensity[m];
-    //  }
   }
-  // std::cout<<"test1"<<std::endl;
-  // type II, check species of sites and second neighbor 
-  // comneigh variable used to avoid double counting,
-  // we consider more than one event between sites, therefore we need 2d comneigh array.
 
+  // Type II events (双分子第二近邻反应)
   int nextneib = 1;
   for (int jj = 0; jj < numneigh[i]; jj++) {
     j = neighbor[i][jj];
-       for (int kk = 0; kk < numneigh[j]; kk++) {
-            k = neighbor[j][kk];
-            if (i == k) continue;
-            for (m = 0; m < ntwo; m++) {
-              int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
-              int coordk = coord[k] < 0 ? (coord[k] % 10 + 10) : (coord[k] % 10);
-	    if ((element[i] == dinput[m][0] && element[k] == dinput[m][1]) && (dpresson[m] == pressureOn || dpresson[m] == 0) && (coord[i] == dcoord[m] || dcoord[m] == -1) && (coordi <= numneigh[i]) && (coordk < numneigh[k]) ) {
-  	      comevent = 1;
-  	      for (int ii = 0; ii < nextneib; ii++) {
-  	      if ( comneigh[ii][0] == k && comneigh[ii][1] == dpropensity[m]) comevent = 0;
-  	      }
-  	      if (comevent){	
-                add_event(i,2,m,dpropensity[m],-1,k,-1);
-                proball += dpropensity[m];
-  	        comneigh[nextneib][0] = k;
-                comneigh[nextneib][1] = dpropensity[m];
-  	        nextneib++;
-  	    } 
+    for (int kk = 0; kk < numneigh[j]; kk++) {
+      k = neighbor[j][kk];
+      if (i == k) continue;
+      for (m = 0; m < ntwo; m++) {
+        int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
+        int coordk = coord[k] < 0 ? (coord[k] % 10 + 10) : (coord[k] % 10);
+        
+        // 修改条件检查：同时检查两个物种的coord，支持"all"
+        if ((element[i] == dinput[m][0] && element[k] == dinput[m][1]) && 
+            (dpresson[m] == pressureOn || dpresson[m] == 0) && 
+            coord_matches(coord[i], dcoord[m]) &&      // 第一个物种coord检查
+            coord_matches(coord[k], dcoord2[m]) &&     // 第二个物种coord检查
+            (coordi <= numneigh[i]) && (coordk < numneigh[k])) {
+            
+          comevent = 1;
+          for (int ii = 0; ii < nextneib; ii++) {
+            if (comneigh[ii][0] == k && comneigh[ii][1] == dpropensity[m]) comevent = 0;
           }
+          if (comevent) {	
+            add_event(i,2,m,dpropensity[m],-1,k,-1);
+            proball += dpropensity[m];
+            comneigh[nextneib][0] = k;
+            comneigh[nextneib][1] = dpropensity[m];
+            nextneib++;
+          } 
         }
       }
     }
-    for (m = 0; m < nextneib; m++) comneigh[m][0] = comneigh[m][1] = 0;
-    // std::cout<<"test2"<<std::endl;
-  //type III, check species of sites and first neighbour 
+  }
+
+  // Type III events (双分子第一近邻反应)
   for (int jj = 0; jj < numneigh[i]; jj++) {
     j = neighbor[i][jj];
-      for (m =0; m < nthree; m++) {
-      // std::cout<<"test3!!!"<<std::endl;
+    for (m = 0; m < nthree; m++) {
       int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
       int coordj = coord[j] < 0 ? (coord[j] % 10 + 10) : (coord[j] % 10);
-      if (element[i] == vinput[m][0] && element[j] == vinput[m][1] && (coord[i] == vcoord[m] || vcoord[m] == -1 ) && (vpresson[m] == pressureOn || vpresson[m] == 0) && (coordi <= numneigh[i]) && (coordj < numneigh[j])) {
-        // std::cout<<"coord[j]:"<<coord[j]<<std::endl;
-        // std::cout<<"numneigh[j]:"<<numneigh[j]<<std::endl;
+      
+      // 修改条件检查：同时检查两个物种的coord，支持"all"
+      if (element[i] == vinput[m][0] && element[j] == vinput[m][1] && 
+          coord_matches(coord[i], vcoord[m]) &&       // 第一个物种coord检查
+          coord_matches(coord[j], vcoord2[m]) &&      // 第二个物种coord检查
+          (vpresson[m] == pressureOn || vpresson[m] == 0) && 
+          (coordi <= numneigh[i]) && (coordj < numneigh[j])) {
+          
         add_event(i,3,m,vpropensity[m],j,-1,-1);
         proball += vpropensity[m];
       }
     }
   }
-  
-  // type IIII, check species of sites and third neighbor
+
+  // Type IV events (同z平面反应)
   for (int p = 0; p < num_same_z_neighbors[i]; p++) {
     int g = same_z_neighbors[i][p]; 
     for (m = 0; m < nfour; m++) {
-    int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
-    int coordg = coord[g] < 0 ? (coord[g] % 10 + 10) : (coord[g] % 10);
-    if (element[i] == finput[m][0] && element[g] == finput[m][1] && (coord[i] == fcoord[m] || fcoord[m] == -1 ) && (fpresson[m] == pressureOn || fpresson[m] == 0) && (coordi <= numneigh[i]) && (coordg < numneigh[g])) {
-      add_event(i,4,m,fpropensity[m],-1,-1,g);
-      proball += fpropensity[m]; }
-  }}
-  /*for (int jj = 0; jj < numneigh[i]; jj++) {
-    j = neighbor[i][jj];
-      for (int kk = 0; kk < numneigh[j]; kk++) {
-        k = neighbor[j][kk];
-         for (int ll = 0; ll < numneigh[k]; ll++) {
-        l = neighbor[k][ll];
-         for (int oo = 0; oo < numneigh[l]; oo++) {
-        o = neighbor[l][oo];
-         for (int pp = 0; pp < numneigh[o]; pp++) {
-        p = neighbor[o][pp];
-          for (int gg = 0; gg < numneigh[p]; gg++) {
-            int g = neighbor[p][gg];
-            for (m = 0; m < nfour; m++) {
-              int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
-              int coordg = coord[g] < 0 ? (coord[g] % 10 + 10) : (coord[g] % 10);
-              if (element[i] == finput[m][0] && element[g] == finput[m][1] && (coord[i] == fcoord[m] || fcoord[m] == -1 ) && (fpresson[m] == pressureOn || fpresson[m] == 0) && (coordi < numneigh[i]) && (coordg < numneigh[g])) {
-                add_event(i,4,m,fpropensity[m],-1,-1,g);
-                proball += fpropensity[m];
-              }
-            }
-        }
-    }}}}
-  }*/
-  
-  // vacant event:5
-  add_event(i,5,-1,0.1,-1,-1,-1);
+      int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
+      int coordg = coord[g] < 0 ? (coord[g] % 10 + 10) : (coord[g] % 10);
+      
+      // 修改条件检查：同时检查两个物种的coord，支持"all"
+      if (element[i] == finput[m][0] && element[g] == finput[m][1] && 
+          coord_matches(coord[i], fcoord[m]) &&       // 第一个物种coord检查
+          coord_matches(coord[g], fcoord2[m]) &&      // 第二个物种coord检查
+          (fpresson[m] == pressureOn || fpresson[m] == 0) && 
+          (coordi <= numneigh[i]) && (coordg < numneigh[g])) {
+          
+        add_event(i,4,m,fpropensity[m],-1,-1,g);
+        proball += fpropensity[m];
+      }
+    }
+  }
+
+  // Type V event (空事件)
+  add_event(i,5,0,0.1,-1,-1,-1);
   proball += 0.1;
-  // std::cout<<"test3"<<std::endl;
+
   return proball;
 }
 
@@ -915,6 +928,8 @@ void AppAldTMA::grow_reactions(int rstyle)
       memory->srealloc(dcoord,n*sizeof(int),"app/ald:dcoord");
     dpresson = (int *) 
       memory->srealloc(dpresson,n*sizeof(int),"app/ald:dpresson");
+    dcoord2 = (int *) 
+      memory->srealloc(dcoord2,n*sizeof(int),"app/ald:dcoord2");
 
   } else if (rstyle == 3) {
     int n = nthree + 1;
@@ -934,7 +949,9 @@ void AppAldTMA::grow_reactions(int rstyle)
       memory->srealloc(vcoord,n*sizeof(int),"app/ald:vcoord");
     vpresson = (int *)
       memory->srealloc(vpresson,n*sizeof(int),"app/ald:vpresson");
-  }
+    vcoord2 = (int *)
+      memory->srealloc(vcoord2,n*sizeof(int),"app/ald:vcoord2");
+     }
   else if (rstyle == 4) {
     int n = nfour + 1;
     frate = (double *)
@@ -953,6 +970,8 @@ void AppAldTMA::grow_reactions(int rstyle)
       memory->srealloc(fcoord,n*sizeof(int),"app/ald:fcoord");
     fpresson = (int *)
       memory->srealloc(fpresson,n*sizeof(int),"app/ald:fpresson");
+    fcoord2 = (int *)
+      memory->srealloc(fcoord2,n*sizeof(int),"app/ald:fcoord2");
   }
 }
 

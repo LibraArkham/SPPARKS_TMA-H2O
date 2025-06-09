@@ -28,6 +28,7 @@ AppStyle(ald/TMA,AppAldTMA)
 
 #include "app_lattice.h"
 
+#define COORD_ALL -999    // 表示匹配所有coord值的特殊标记
 
 
 namespace SPPARKS_NS {
@@ -48,7 +49,10 @@ class AppAldTMA : public AppLattice {
   double site_propensity(int);
   void site_event(int, class RandomPark *);
   int species_to_enum(const char* species_name); // 添加这一行
- private:
+  int parse_coord_value(const char* coord_str);  // 新增：解析coord字符串的函数
+  bool coord_matches(int site_coord, int required_coord);  // 检查coord是否匹配
+
+private:
   int engstyle;
   int *coord,*element;      // variables on each lattice site 
   int firsttime;
@@ -78,6 +82,7 @@ class AppAldTMA : public AppLattice {
   double *sA,*dA,*vA,*fA;
   int *sexpon,*dexpon,*vexpon,*fexpon;
   int *scoord,*dcoord,*vcoord,*fcoord;//coord options
+  int *dcoord2,*vcoord2,*fcoord2;
   int *spresson,*dpresson,*vpresson,*fpresson; //pressure options
 
   struct Event {           // one event for an owned site
