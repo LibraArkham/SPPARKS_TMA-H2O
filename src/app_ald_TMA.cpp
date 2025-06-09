@@ -490,7 +490,7 @@ double AppAldTMA::site_propensity(int i)
             for (m = 0; m < ntwo; m++) {
               int coordi = coord[i] < 0 ? (coord[i] % 10 + 10) : (coord[i] % 10);
               int coordk = coord[k] < 0 ? (coord[k] % 10 + 10) : (coord[k] % 10);
-	    if ((element[i] == dinput[m][0] && element[k] == dinput[m][1]) && (dpresson[m] == pressureOn || dpresson[m] == 0) && (coord[i] == dcoord[m] || dcoord[m] == -1) ) {
+	    if ((element[i] == dinput[m][0] && element[k] == dinput[m][1]) && (dpresson[m] == pressureOn || dpresson[m] == 0) && (coord[i] == dcoord[m] || dcoord[m] == -1) && (coordi <= numneigh[i]) && (coordk < numneigh[k]) ) {
   	      comevent = 1;
   	      for (int ii = 0; ii < nextneib; ii++) {
   	      if ( comneigh[ii][0] == k && comneigh[ii][1] == dpropensity[m]) comevent = 0;
