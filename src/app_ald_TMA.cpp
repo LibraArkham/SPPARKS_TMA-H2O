@@ -753,9 +753,11 @@ void AppAldTMA::site_event(int i, class RandomPark *random)
    if (rstyle == 1) {
     if ((elcoord_i == OHAlaX3 || elcoord_i == OHAlbX3) && element[i] == OH) {
       remove_mask(i);
+      remove_mask_2(i);
     }
-    else if (elcoord_i == OAlaX2H2O || OAlbX2H2O && element[i] == OAlaXOH || OAlbXOH) {
+    else if ((elcoord_i == OAlaX2H2O || OAlbX2H2O) && (element[i] == OAlaXOH || OAlbXOH)) {
       remove_mask(i);
+      remove_mask_2(i);
     }
   }
   
@@ -768,12 +770,12 @@ void AppAldTMA::site_event(int i, class RandomPark *random)
   }
 
   else if (rstyle == 4) {
-    if (elcoord_g == OAlaX2 || OAlbX2 && element[g] == OAlaX || OAlbX) {
+    if ((elcoord_g == OAlaX2 || OAlbX2) && (element[g] == OAlaX || OAlbX)) {
       remove_mask(g);
       remove_mask_2(g);
     }
     }
- 
+  
   count_coord(i);
   propensity[isite] = site_propensity(i);
   esites[nsites++] = isite;
