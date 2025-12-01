@@ -1,0 +1,1607 @@
+#SPPARKS for Al2O3
+#precursor:TMA   co-reactant:H2O
+
+
+#Initialize
+seed 12345
+
+app_style ald/TMA
+
+read_sites data.ald
+
+sector no
+
+solve_style linear
+event 1 H2O VAC 2.08e10 1 1.51 1 0 s1
+event 1 H2O VAC 2.08e10 1 1.51 -9 0 s2
+event 1 H2O VAC 2.08e10 1 1.51 -19 0 s3
+event 1 H2O VAC 2.08e10 1 1.51 -29 0 s4
+event 1 H2O VAC 2.08e10 1 1.51 -39 0 s5
+event 1 H2O VAC 2.08e10 1 1.51 -49 0 s6
+event 1 H2O VAC 2.08e10 1 1.51 2 0 s7
+event 1 H2O VAC 2.08e10 1 1.51 -8 0 s8
+event 1 H2O VAC 2.08e10 1 1.51 -18 0 s9
+event 1 H2O VAC 2.08e10 1 1.51 -28 0 s10
+event 1 H2O VAC 2.08e10 1 1.51 -38 0 s11
+event 1 H2O VAC 2.08e10 1 1.51 -48 0 s12
+event 1 H2O VAC 2.08e10 1 1.51 3 0 s13
+event 1 H2O VAC 2.08e10 1 1.51 -7 0 s14
+event 1 H2O VAC 2.08e10 1 1.51 -17 0 s15
+event 1 H2O VAC 2.08e10 1 1.51 -27 0 s16
+event 1 H2O VAC 2.08e10 1 1.51 -37 0 s17
+event 1 H2O VAC 2.08e10 1 1.51 -47 0 s18
+event 1 OHAlbX3 OH 2.08e10 1 0.58 1 0 s19
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -9 0 s20
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -19 0 s21
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -29 0 s22
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -39 0 s23
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -49 0 s24
+event 1 OHAlbX3 OH 2.08e10 1 0.58 2 0 s25
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -8 0 s26
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -18 0 s27
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -28 0 s28
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -38 0 s29
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -48 0 s30
+event 1 OHAlbX3 OH 2.08e10 1 0.58 3 0 s31
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -7 0 s32
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -17 0 s33
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -27 0 s34
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -37 0 s35
+event 1 OHAlbX3 OH 2.08e10 1 0.58 -47 0 s36
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 1 0 s37
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -9 0 s38
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -19 0 s39
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -29 0 s40
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -39 0 s41
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -49 0 s42
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 2 0 s43
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -8 0 s44
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -18 0 s45
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -28 0 s46
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -38 0 s47
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -48 0 s48
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 3 0 s49
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -7 0 s50
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -17 0 s51
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -27 0 s52
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -37 0 s53
+event 1 OHAlbX3 OAlbX2 2.08e10 1 0.409 -47 0 s54
+event 1 OAlbX2 OAlbX2H2O 3.14 0 0 all 2 s55
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 1 0 s56
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -9 0 s57
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -19 0 s58
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -29 0 s59
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -39 0 s60
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -49 0 s61
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 2 0 s62
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -8 0 s63
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -18 0 s64
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -28 0 s65
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -38 0 s66
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -48 0 s67
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 3 0 s68
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -7 0 s69
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -17 0 s70
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -27 0 s71
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -37 0 s72
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -47 0 s73
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 4 0 s74
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -6 0 s75
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -16 0 s76
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -26 0 s77
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -36 0 s78
+event 1 OAlbX2H2O OAlbX2 2.08e10 1 1.11 -46 0 s79
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 1 0 s80
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -9 0 s81
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -19 0 s82
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -29 0 s83
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -39 0 s84
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -49 0 s85
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 2 0 s86
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -8 0 s87
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -18 0 s88
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -28 0 s89
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -38 0 s90
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -48 0 s91
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 3 0 s92
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -7 0 s93
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -17 0 s94
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -27 0 s95
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -37 0 s96
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -47 0 s97
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 4 0 s98
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -6 0 s99
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -16 0 s100
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -26 0 s101
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -36 0 s102
+event 1 OAlbX2H2O OAlbXOH 2.08e10 1 0.71 -46 0 s103
+event 1 OAlbX OAlbXH2O 3.14 0 0 all 2 s104
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 1 0 s105
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -9 0 s106
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -19 0 s107
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -29 0 s108
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -39 0 s109
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -49 0 s110
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 2 0 s111
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -8 0 s112
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -18 0 s113
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -28 0 s114
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -38 0 s115
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -48 0 s116
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 3 0 s117
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -7 0 s118
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -17 0 s119
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -27 0 s120
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -37 0 s121
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -47 0 s122
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 4 0 s123
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -6 0 s124
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -16 0 s125
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -26 0 s126
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -36 0 s127
+event 1 OAlbXH2O OAlbX 2.08e10 1 1.09 -46 0 s128
+event 1 OAlbXOH OAlbXOHH2O 3.14 0 0 all 2 s129
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 1 0 s130
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -9 0 s131
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -19 0 s132
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -29 0 s133
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -39 0 s134
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -49 0 s135
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 2 0 s136
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -8 0 s137
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -18 0 s138
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -28 0 s139
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -38 0 s140
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -48 0 s141
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 3 0 s142
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -7 0 s143
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -17 0 s144
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -27 0 s145
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -37 0 s146
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -47 0 s147
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 4 0 s148
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -6 0 s149
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -16 0 s150
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -26 0 s151
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -36 0 s152
+event 1 OAlbXOHH2O OAlbXOH 2.08e10 1 1.4 -46 0 s153
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 1 0 s154
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -9 0 s155
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -19 0 s156
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -29 0 s157
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -39 0 s158
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -49 0 s159
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 2 0 s160
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -8 0 s161
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -18 0 s162
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -28 0 s163
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -38 0 s164
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -48 0 s165
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 3 0 s166
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -7 0 s167
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -17 0 s168
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -27 0 s169
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -37 0 s170
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -47 0 s171
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 4 0 s172
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -6 0 s173
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -16 0 s174
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -26 0 s175
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -36 0 s176
+event 1 OAlbXOHH2O OAlbOH2 2.08e10 1 0.989 -46 0 s177
+event 1 OHAlaX3 OH 2.08e10 1 0.87 1 0 s178
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -9 0 s179
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -19 0 s180
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -29 0 s181
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -39 0 s182
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -49 0 s183
+event 1 OHAlaX3 OH 2.08e10 1 0.87 2 0 s184
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -8 0 s185
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -18 0 s186
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -28 0 s187
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -38 0 s188
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -48 0 s189
+event 1 OHAlaX3 OH 2.08e10 1 0.87 3 0 s190
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -7 0 s191
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -17 0 s192
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -27 0 s193
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -37 0 s194
+event 1 OHAlaX3 OH 2.08e10 1 0.87 -47 0 s195
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 1 0 s196
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -9 0 s197
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -19 0 s198
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -29 0 s199
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -39 0 s200
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -49 0 s201
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 2 0 s202
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -8 0 s203
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -18 0 s204
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -28 0 s205
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -38 0 s206
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -48 0 s207
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 3 0 s208
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -7 0 s209
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -17 0 s210
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -27 0 s211
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -37 0 s212
+event 1 OHAlaX3 OAlaX2 2.08e10 1 0.809 -47 0 s213
+event 1 OAlaX2 OAlaX2H2O 3.14 0 0 all 2 s214
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 1 2 s215
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -9 2 s216
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -19 2 s217
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -29 2 s218
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -39 2 s219
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -49 2 s220
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 2 2 s221
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -8 2 s222
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -18 2 s223
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -28 2 s224
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -38 2 s225
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -48 2 s226
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 3 2 s227
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -7 2 s228
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -17 2 s229
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -27 2 s230
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -37 2 s231
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -47 2 s232
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 4 2 s233
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -6 2 s234
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -16 2 s235
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -26 2 s236
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -36 2 s237
+event 1 OAlaX2H2O OAlaX2 2.08e10 1 1.11 -46 2 s238
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 1 2 s239
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -9 2 s240
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -19 2 s241
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -29 2 s242
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -39 2 s243
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -49 2 s244
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 2 2 s245
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -8 2 s246
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -18 2 s247
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -28 2 s248
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -38 2 s249
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -48 2 s250
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 3 2 s251
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -7 2 s252
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -17 2 s253
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -27 2 s254
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -37 2 s255
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -47 2 s256
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 4 2 s257
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -6 2 s258
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -16 2 s259
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -26 2 s260
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -36 2 s261
+event 1 OAlaX2H2O OAlaXOH 2.08e10 1 0.71 -46 2 s262
+event 1 OAlaX OAlaXH2O 3.14 0 0 all 2 s263
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 1 0 s264
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -9 0 s265
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -19 0 s266
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -29 0 s267
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -39 0 s268
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -49 0 s269
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 2 0 s270
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -8 0 s271
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -18 0 s272
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -28 0 s273
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -38 0 s274
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -48 0 s275
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 3 0 s276
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -7 0 s277
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -17 0 s278
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -27 0 s279
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -37 0 s280
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -47 0 s281
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 4 0 s282
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -6 0 s283
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -16 0 s284
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -26 0 s285
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -36 0 s286
+event 1 OAlaXH2O OAlaX 2.08e10 1 1.09 -46 0 s287
+event 1 OAlaXOH OAlaXOHH2O 3.14 0 0 all 2 s288
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 1 0 s289
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -9 0 s290
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -19 0 s291
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -29 0 s292
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -39 0 s293
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -49 0 s294
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 2 0 s295
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -8 0 s296
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -18 0 s297
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -28 0 s298
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -38 0 s299
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -48 0 s300
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 3 0 s301
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -7 0 s302
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -17 0 s303
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -27 0 s304
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -37 0 s305
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -47 0 s306
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 4 0 s307
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -6 0 s308
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -16 0 s309
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -26 0 s310
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -36 0 s311
+event 1 OAlaXOHH2O OAlaXOH 2.08e10 1 1.4 -46 0 s312
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 1 0 s313
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -9 0 s314
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -19 0 s315
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -29 0 s316
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -39 0 s317
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -49 0 s318
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 2 0 s319
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -8 0 s320
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -18 0 s321
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -28 0 s322
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -38 0 s323
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -48 0 s324
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 3 0 s325
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -7 0 s326
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -17 0 s327
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -27 0 s328
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -37 0 s329
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -47 0 s330
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 4 0 s331
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -6 0 s332
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -16 0 s333
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -26 0 s334
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -36 0 s335
+event 1 OAlaXOHH2O OAlaOH2 2.08e10 1 0.989 -46 0 s336
+event 2 OH O O OH 2.08e10 1 0.48 3 1 0 d1
+event 2 OH O O OH 2.08e10 1 0.48 3 -9 0 d2
+event 2 OH O O OH 2.08e10 1 0.48 3 -19 0 d3
+event 2 OH O O OH 2.08e10 1 0.48 3 -29 0 d4
+event 2 OH O O OH 2.08e10 1 0.48 3 -39 0 d5
+event 2 OH O O OH 2.08e10 1 0.48 3 -49 0 d6
+event 2 OH O O OH 2.08e10 1 0.48 -7 1 0 d7
+event 2 OH O O OH 2.08e10 1 0.48 -7 -9 0 d8
+event 2 OH O O OH 2.08e10 1 0.48 -7 -19 0 d9
+event 2 OH O O OH 2.08e10 1 0.48 -7 -29 0 d10
+event 2 OH O O OH 2.08e10 1 0.48 -7 -39 0 d11
+event 2 OH O O OH 2.08e10 1 0.48 -7 -49 0 d12
+event 2 OH O O OH 2.08e10 1 0.48 -17 1 0 d13
+event 2 OH O O OH 2.08e10 1 0.48 -17 -9 0 d14
+event 2 OH O O OH 2.08e10 1 0.48 -17 -19 0 d15
+event 2 OH O O OH 2.08e10 1 0.48 -17 -29 0 d16
+event 2 OH O O OH 2.08e10 1 0.48 -17 -39 0 d17
+event 2 OH O O OH 2.08e10 1 0.48 -17 -49 0 d18
+event 2 OH O O OH 2.08e10 1 0.48 -27 1 0 d19
+event 2 OH O O OH 2.08e10 1 0.48 -27 -9 0 d20
+event 2 OH O O OH 2.08e10 1 0.48 -27 -19 0 d21
+event 2 OH O O OH 2.08e10 1 0.48 -27 -29 0 d22
+event 2 OH O O OH 2.08e10 1 0.48 -27 -39 0 d23
+event 2 OH O O OH 2.08e10 1 0.48 -27 -49 0 d24
+event 2 OH O O OH 2.08e10 1 0.48 -37 1 0 d25
+event 2 OH O O OH 2.08e10 1 0.48 -37 -9 0 d26
+event 2 OH O O OH 2.08e10 1 0.48 -37 -19 0 d27
+event 2 OH O O OH 2.08e10 1 0.48 -37 -29 0 d28
+event 2 OH O O OH 2.08e10 1 0.48 -37 -39 0 d29
+event 2 OH O O OH 2.08e10 1 0.48 -37 -49 0 d30
+event 2 OH O O OH 2.08e10 1 0.48 -47 1 0 d31
+event 2 OH O O OH 2.08e10 1 0.48 -47 -9 0 d32
+event 2 OH O O OH 2.08e10 1 0.48 -47 -19 0 d33
+event 2 OH O O OH 2.08e10 1 0.48 -47 -29 0 d34
+event 2 OH O O OH 2.08e10 1 0.48 -47 -39 0 d35
+event 2 OH O O OH 2.08e10 1 0.48 -47 -49 0 d36
+event 2 OH O O OH 2.08e10 1 0.48 4 1 0 d37
+event 2 OH O O OH 2.08e10 1 0.48 4 -9 0 d38
+event 2 OH O O OH 2.08e10 1 0.48 4 -19 0 d39
+event 2 OH O O OH 2.08e10 1 0.48 4 -29 0 d40
+event 2 OH O O OH 2.08e10 1 0.48 4 -39 0 d41
+event 2 OH O O OH 2.08e10 1 0.48 4 -49 0 d42
+event 2 OH O O OH 2.08e10 1 0.48 -6 1 0 d43
+event 2 OH O O OH 2.08e10 1 0.48 -6 -9 0 d44
+event 2 OH O O OH 2.08e10 1 0.48 -6 -19 0 d45
+event 2 OH O O OH 2.08e10 1 0.48 -6 -29 0 d46
+event 2 OH O O OH 2.08e10 1 0.48 -6 -39 0 d47
+event 2 OH O O OH 2.08e10 1 0.48 -6 -49 0 d48
+event 2 OH O O OH 2.08e10 1 0.48 -16 1 0 d49
+event 2 OH O O OH 2.08e10 1 0.48 -16 -9 0 d50
+event 2 OH O O OH 2.08e10 1 0.48 -16 -19 0 d51
+event 2 OH O O OH 2.08e10 1 0.48 -16 -29 0 d52
+event 2 OH O O OH 2.08e10 1 0.48 -16 -39 0 d53
+event 2 OH O O OH 2.08e10 1 0.48 -16 -49 0 d54
+event 2 OH O O OH 2.08e10 1 0.48 -26 1 0 d55
+event 2 OH O O OH 2.08e10 1 0.48 -26 -9 0 d56
+event 2 OH O O OH 2.08e10 1 0.48 -26 -19 0 d57
+event 2 OH O O OH 2.08e10 1 0.48 -26 -29 0 d58
+event 2 OH O O OH 2.08e10 1 0.48 -26 -39 0 d59
+event 2 OH O O OH 2.08e10 1 0.48 -26 -49 0 d60
+event 2 OH O O OH 2.08e10 1 0.48 -36 1 0 d61
+event 2 OH O O OH 2.08e10 1 0.48 -36 -9 0 d62
+event 2 OH O O OH 2.08e10 1 0.48 -36 -19 0 d63
+event 2 OH O O OH 2.08e10 1 0.48 -36 -29 0 d64
+event 2 OH O O OH 2.08e10 1 0.48 -36 -39 0 d65
+event 2 OH O O OH 2.08e10 1 0.48 -36 -49 0 d66
+event 2 OH O O OH 2.08e10 1 0.48 -46 1 0 d67
+event 2 OH O O OH 2.08e10 1 0.48 -46 -9 0 d68
+event 2 OH O O OH 2.08e10 1 0.48 -46 -19 0 d69
+event 2 OH O O OH 2.08e10 1 0.48 -46 -29 0 d70
+event 2 OH O O OH 2.08e10 1 0.48 -46 -39 0 d71
+event 2 OH O O OH 2.08e10 1 0.48 -46 -49 0 d72
+event 2 OH O O OH 2.08e10 1 0.48 3 2 0 d73
+event 2 OH O O OH 2.08e10 1 0.48 3 -8 0 d74
+event 2 OH O O OH 2.08e10 1 0.48 3 -18 0 d75
+event 2 OH O O OH 2.08e10 1 0.48 3 -28 0 d76
+event 2 OH O O OH 2.08e10 1 0.48 3 -38 0 d77
+event 2 OH O O OH 2.08e10 1 0.48 3 -48 0 d78
+event 2 OH O O OH 2.08e10 1 0.48 -7 2 0 d79
+event 2 OH O O OH 2.08e10 1 0.48 -7 -8 0 d80
+event 2 OH O O OH 2.08e10 1 0.48 -7 -18 0 d81
+event 2 OH O O OH 2.08e10 1 0.48 -7 -28 0 d82
+event 2 OH O O OH 2.08e10 1 0.48 -7 -38 0 d83
+event 2 OH O O OH 2.08e10 1 0.48 -7 -48 0 d84
+event 2 OH O O OH 2.08e10 1 0.48 -17 2 0 d85
+event 2 OH O O OH 2.08e10 1 0.48 -17 -8 0 d86
+event 2 OH O O OH 2.08e10 1 0.48 -17 -18 0 d87
+event 2 OH O O OH 2.08e10 1 0.48 -17 -28 0 d88
+event 2 OH O O OH 2.08e10 1 0.48 -17 -38 0 d89
+event 2 OH O O OH 2.08e10 1 0.48 -17 -48 0 d90
+event 2 OH O O OH 2.08e10 1 0.48 -27 2 0 d91
+event 2 OH O O OH 2.08e10 1 0.48 -27 -8 0 d92
+event 2 OH O O OH 2.08e10 1 0.48 -27 -18 0 d93
+event 2 OH O O OH 2.08e10 1 0.48 -27 -28 0 d94
+event 2 OH O O OH 2.08e10 1 0.48 -27 -38 0 d95
+event 2 OH O O OH 2.08e10 1 0.48 -27 -48 0 d96
+event 2 OH O O OH 2.08e10 1 0.48 -37 2 0 d97
+event 2 OH O O OH 2.08e10 1 0.48 -37 -8 0 d98
+event 2 OH O O OH 2.08e10 1 0.48 -37 -18 0 d99
+event 2 OH O O OH 2.08e10 1 0.48 -37 -28 0 d100
+event 2 OH O O OH 2.08e10 1 0.48 -37 -38 0 d101
+event 2 OH O O OH 2.08e10 1 0.48 -37 -48 0 d102
+event 2 OH O O OH 2.08e10 1 0.48 -47 2 0 d103
+event 2 OH O O OH 2.08e10 1 0.48 -47 -8 0 d104
+event 2 OH O O OH 2.08e10 1 0.48 -47 -18 0 d105
+event 2 OH O O OH 2.08e10 1 0.48 -47 -28 0 d106
+event 2 OH O O OH 2.08e10 1 0.48 -47 -38 0 d107
+event 2 OH O O OH 2.08e10 1 0.48 -47 -48 0 d108
+event 2 OH O O OH 2.08e10 1 0.48 4 2 0 d109
+event 2 OH O O OH 2.08e10 1 0.48 4 -8 0 d110
+event 2 OH O O OH 2.08e10 1 0.48 4 -18 0 d111
+event 2 OH O O OH 2.08e10 1 0.48 4 -28 0 d112
+event 2 OH O O OH 2.08e10 1 0.48 4 -38 0 d113
+event 2 OH O O OH 2.08e10 1 0.48 4 -48 0 d114
+event 2 OH O O OH 2.08e10 1 0.48 -6 2 0 d115
+event 2 OH O O OH 2.08e10 1 0.48 -6 -8 0 d116
+event 2 OH O O OH 2.08e10 1 0.48 -6 -18 0 d117
+event 2 OH O O OH 2.08e10 1 0.48 -6 -28 0 d118
+event 2 OH O O OH 2.08e10 1 0.48 -6 -38 0 d119
+event 2 OH O O OH 2.08e10 1 0.48 -6 -48 0 d120
+event 2 OH O O OH 2.08e10 1 0.48 -16 2 0 d121
+event 2 OH O O OH 2.08e10 1 0.48 -16 -8 0 d122
+event 2 OH O O OH 2.08e10 1 0.48 -16 -18 0 d123
+event 2 OH O O OH 2.08e10 1 0.48 -16 -28 0 d124
+event 2 OH O O OH 2.08e10 1 0.48 -16 -38 0 d125
+event 2 OH O O OH 2.08e10 1 0.48 -16 -48 0 d126
+event 2 OH O O OH 2.08e10 1 0.48 -26 2 0 d127
+event 2 OH O O OH 2.08e10 1 0.48 -26 -8 0 d128
+event 2 OH O O OH 2.08e10 1 0.48 -26 -18 0 d129
+event 2 OH O O OH 2.08e10 1 0.48 -26 -28 0 d130
+event 2 OH O O OH 2.08e10 1 0.48 -26 -38 0 d131
+event 2 OH O O OH 2.08e10 1 0.48 -26 -48 0 d132
+event 2 OH O O OH 2.08e10 1 0.48 -36 2 0 d133
+event 2 OH O O OH 2.08e10 1 0.48 -36 -8 0 d134
+event 2 OH O O OH 2.08e10 1 0.48 -36 -18 0 d135
+event 2 OH O O OH 2.08e10 1 0.48 -36 -28 0 d136
+event 2 OH O O OH 2.08e10 1 0.48 -36 -38 0 d137
+event 2 OH O O OH 2.08e10 1 0.48 -36 -48 0 d138
+event 2 OH O O OH 2.08e10 1 0.48 -46 2 0 d139
+event 2 OH O O OH 2.08e10 1 0.48 -46 -8 0 d140
+event 2 OH O O OH 2.08e10 1 0.48 -46 -18 0 d141
+event 2 OH O O OH 2.08e10 1 0.48 -46 -28 0 d142
+event 2 OH O O OH 2.08e10 1 0.48 -46 -38 0 d143
+event 2 OH O O OH 2.08e10 1 0.48 -46 -48 0 d144
+event 2 H2O OH O OH 2.08e10 1 0.35 1 all 0 d145
+event 2 H2O OH O OH 2.08e10 1 0.35 -9 all 0 d146
+event 2 H2O OH O OH 2.08e10 1 0.35 -19 all 0 d147
+event 2 H2O OH O OH 2.08e10 1 0.35 -29 all 0 d148
+event 2 H2O OH O OH 2.08e10 1 0.35 -39 all 0 d149
+event 2 H2O OH O OH 2.08e10 1 0.35 -49 all 0 d150
+event 2 H2O OH O OH 2.08e10 1 0.35 2 all 0 d151
+event 2 H2O OH O OH 2.08e10 1 0.35 -8 all 0 d152
+event 2 H2O OH O OH 2.08e10 1 0.35 -18 all 0 d153
+event 2 H2O OH O OH 2.08e10 1 0.35 -28 all 0 d154
+event 2 H2O OH O OH 2.08e10 1 0.35 -38 all 0 d155
+event 2 H2O OH O OH 2.08e10 1 0.35 -48 all 0 d156
+event 2 OH O OH VAC 2.08e10 1 1.26 4 3 0 d157
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -7 0 d158
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -17 0 d159
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -27 0 d160
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -37 0 d161
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -47 0 d162
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 3 0 d163
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -7 0 d164
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -17 0 d165
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -27 0 d166
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -37 0 d167
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -47 0 d168
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 3 0 d169
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -7 0 d170
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -17 0 d171
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -27 0 d172
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -37 0 d173
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -47 0 d174
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 3 0 d175
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -7 0 d176
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -17 0 d177
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -27 0 d178
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -37 0 d179
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -47 0 d180
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 3 0 d181
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -7 0 d182
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -17 0 d183
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -27 0 d184
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -37 0 d185
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -47 0 d186
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 3 0 d187
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -7 0 d188
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -17 0 d189
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -27 0 d190
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -37 0 d191
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -47 0 d192
+event 2 OH O OH VAC 2.08e10 1 1.26 4 4 0 d193
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -6 0 d194
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -16 0 d195
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -26 0 d196
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -36 0 d197
+event 2 OH O OH VAC 2.08e10 1 1.26 4 -46 0 d198
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 4 0 d199
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -6 0 d200
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -16 0 d201
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -26 0 d202
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -36 0 d203
+event 2 OH O OH VAC 2.08e10 1 1.26 -6 -46 0 d204
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 4 0 d205
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -6 0 d206
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -16 0 d207
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -26 0 d208
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -36 0 d209
+event 2 OH O OH VAC 2.08e10 1 1.26 -16 -46 0 d210
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 4 0 d211
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -6 0 d212
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -16 0 d213
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -26 0 d214
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -36 0 d215
+event 2 OH O OH VAC 2.08e10 1 1.26 -26 -46 0 d216
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 4 0 d217
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -6 0 d218
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -16 0 d219
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -26 0 d220
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -36 0 d221
+event 2 OH O OH VAC 2.08e10 1 1.26 -36 -46 0 d222
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 4 0 d223
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -6 0 d224
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -16 0 d225
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -26 0 d226
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -36 0 d227
+event 2 OH O OH VAC 2.08e10 1 1.26 -46 -46 0 d228
+event 2 OH O OH VAC 2.08e10 1 1.26 3 3 0 d229
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -7 0 d230
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -17 0 d231
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -27 0 d232
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -37 0 d233
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -47 0 d234
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 3 0 d235
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -7 0 d236
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -17 0 d237
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -27 0 d238
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -37 0 d239
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -47 0 d240
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 3 0 d241
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -7 0 d242
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -17 0 d243
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -27 0 d244
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -37 0 d245
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -47 0 d246
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 3 0 d247
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -7 0 d248
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -17 0 d249
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -27 0 d250
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -37 0 d251
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -47 0 d252
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 3 0 d253
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -7 0 d254
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -17 0 d255
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -27 0 d256
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -37 0 d257
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -47 0 d258
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 3 0 d259
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -7 0 d260
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -17 0 d261
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -27 0 d262
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -37 0 d263
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -47 0 d264
+event 2 OH O OH VAC 2.08e10 1 1.26 3 4 0 d265
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -6 0 d266
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -16 0 d267
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -26 0 d268
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -36 0 d269
+event 2 OH O OH VAC 2.08e10 1 1.26 3 -46 0 d270
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 4 0 d271
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -6 0 d272
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -16 0 d273
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -26 0 d274
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -36 0 d275
+event 2 OH O OH VAC 2.08e10 1 1.26 -7 -46 0 d276
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 4 0 d277
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -6 0 d278
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -16 0 d279
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -26 0 d280
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -36 0 d281
+event 2 OH O OH VAC 2.08e10 1 1.26 -17 -46 0 d282
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 4 0 d283
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -6 0 d284
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -16 0 d285
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -26 0 d286
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -36 0 d287
+event 2 OH O OH VAC 2.08e10 1 1.26 -27 -46 0 d288
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 4 0 d289
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -6 0 d290
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -16 0 d291
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -26 0 d292
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -36 0 d293
+event 2 OH O OH VAC 2.08e10 1 1.26 -37 -46 0 d294
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 4 0 d295
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -6 0 d296
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -16 0 d297
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -26 0 d298
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -36 0 d299
+event 2 OH O OH VAC 2.08e10 1 1.26 -47 -46 0 d300
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 1 all 0 d301
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -9 all 0 d302
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -19 all 0 d303
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -29 all 0 d304
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -39 all 0 d305
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -49 all 0 d306
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 2 all 0 d307
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -8 all 0 d308
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -18 all 0 d309
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -28 all 0 d310
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -38 all 0 d311
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -48 all 0 d312
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 3 all 0 d313
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -7 all 0 d314
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -17 all 0 d315
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -27 all 0 d316
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -37 all 0 d317
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -47 all 0 d318
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 4 all 0 d319
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -6 all 0 d320
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -16 all 0 d321
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -26 all 0 d322
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -36 all 0 d323
+event 2 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -46 all 0 d324
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 1 all 0 d325
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -9 all 0 d326
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -19 all 0 d327
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -29 all 0 d328
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -39 all 0 d329
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -49 all 0 d330
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 2 all 0 d331
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -8 all 0 d332
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -18 all 0 d333
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -28 all 0 d334
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -38 all 0 d335
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -48 all 0 d336
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 3 all 0 d337
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -7 all 0 d338
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -17 all 0 d339
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -27 all 0 d340
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -37 all 0 d341
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -47 all 0 d342
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 4 all 0 d343
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -6 all 0 d344
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -16 all 0 d345
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -26 all 0 d346
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -36 all 0 d347
+event 2 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -46 all 0 d348
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 1 all 0 d349
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -9 all 0 d350
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -19 all 0 d351
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -29 all 0 d352
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -39 all 0 d353
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -49 all 0 d354
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 2 all 0 d355
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -8 all 0 d356
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -18 all 0 d357
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -28 all 0 d358
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -38 all 0 d359
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -48 all 0 d360
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 3 all 0 d361
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -7 all 0 d362
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -17 all 0 d363
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -27 all 0 d364
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -37 all 0 d365
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -47 all 0 d366
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 4 all 0 d367
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -6 all 0 d368
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -16 all 0 d369
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -26 all 0 d370
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -36 all 0 d371
+event 2 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -46 all 0 d372
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 1 all 0 d373
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -9 all 0 d374
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -19 all 0 d375
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -29 all 0 d376
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -39 all 0 d377
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -49 all 0 d378
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 2 all 0 d379
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -8 all 0 d380
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -18 all 0 d381
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -28 all 0 d382
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -38 all 0 d383
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -48 all 0 d384
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 3 all 0 d385
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -7 all 0 d386
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -17 all 0 d387
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -27 all 0 d388
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -37 all 0 d389
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -47 all 0 d390
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 4 all 0 d391
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -6 all 0 d392
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -16 all 0 d393
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -26 all 0 d394
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -36 all 0 d395
+event 2 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -46 all 0 d396
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 1 all 0 d397
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -9 all 0 d398
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -19 all 0 d399
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -29 all 0 d400
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -39 all 0 d401
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -49 all 0 d402
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 2 all 0 d403
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -8 all 0 d404
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -18 all 0 d405
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -28 all 0 d406
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -38 all 0 d407
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -48 all 0 d408
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 3 all 0 d409
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -7 all 0 d410
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -17 all 0 d411
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -27 all 0 d412
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -37 all 0 d413
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -47 all 0 d414
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 4 all 0 d415
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -6 all 0 d416
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -16 all 0 d417
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -26 all 0 d418
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -36 all 0 d419
+event 2 VAC OH OAlbOH OAlb 2.08e10 1 0.2 -46 all 0 d420
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 1 all 0 d421
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -9 all 0 d422
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -19 all 0 d423
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -29 all 0 d424
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -39 all 0 d425
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -49 all 0 d426
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 2 all 0 d427
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -8 all 0 d428
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -18 all 0 d429
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -28 all 0 d430
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -38 all 0 d431
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -48 all 0 d432
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 3 all 0 d433
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -7 all 0 d434
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -17 all 0 d435
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -27 all 0 d436
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -37 all 0 d437
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -47 all 0 d438
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 4 all 0 d439
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -6 all 0 d440
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -16 all 0 d441
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -26 all 0 d442
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -36 all 0 d443
+event 2 VAC OH OAlaOH OAla 2.08e10 1 0.2 -46 all 0 d444
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 1 all 0 d445
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -9 all 0 d446
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -19 all 0 d447
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -29 all 0 d448
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -39 all 0 d449
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -49 all 0 d450
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 2 all 0 d451
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -8 all 0 d452
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -18 all 0 d453
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -28 all 0 d454
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -38 all 0 d455
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -48 all 0 d456
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 3 all 0 d457
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -7 all 0 d458
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -17 all 0 d459
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -27 all 0 d460
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -37 all 0 d461
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -47 all 0 d462
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 4 all 0 d463
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -6 all 0 d464
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -16 all 0 d465
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -26 all 0 d466
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -36 all 0 d467
+event 2 VAC OH OAlaOH2 OAlaOH 2.08e10 1 0.2 -46 all 0 d468
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 1 all 0 d469
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -9 all 0 d470
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -19 all 0 d471
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -29 all 0 d472
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -39 all 0 d473
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -49 all 0 d474
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 2 all 0 d475
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -8 all 0 d476
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -18 all 0 d477
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -28 all 0 d478
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -38 all 0 d479
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -48 all 0 d480
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 3 all 0 d481
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -7 all 0 d482
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -17 all 0 d483
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -27 all 0 d484
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -37 all 0 d485
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -47 all 0 d486
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 4 all 0 d487
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -6 all 0 d488
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -16 all 0 d489
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -26 all 0 d490
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -36 all 0 d491
+event 2 VAC OH OAlbOH2 OAlbOH 2.08e10 1 0.2 -46 all 0 d492
+event 3 Ala Ala VAC H2O 3.14 0 0 3 1 2 v1
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -9 2 v2
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -19 2 v3
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -29 2 v4
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -39 2 v5
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -49 2 v6
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 1 2 v7
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -9 2 v8
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -19 2 v9
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -29 2 v10
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -39 2 v11
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -49 2 v12
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 1 2 v13
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -9 2 v14
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -19 2 v15
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -29 2 v16
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -39 2 v17
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -49 2 v18
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 1 2 v19
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -9 2 v20
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -19 2 v21
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -29 2 v22
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -39 2 v23
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -49 2 v24
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 1 2 v25
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -9 2 v26
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -19 2 v27
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -29 2 v28
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -39 2 v29
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -49 2 v30
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 1 2 v31
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -9 2 v32
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -19 2 v33
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -29 2 v34
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -39 2 v35
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -49 2 v36
+event 3 Alb Alb VAC H2O 3.14 0 0 3 1 2 v37
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -9 2 v38
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -19 2 v39
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -29 2 v40
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -39 2 v41
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -49 2 v42
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 1 2 v43
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -9 2 v44
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -19 2 v45
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -29 2 v46
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -39 2 v47
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -49 2 v48
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 1 2 v49
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -9 2 v50
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -19 2 v51
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -29 2 v52
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -39 2 v53
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -49 2 v54
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 1 2 v55
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -9 2 v56
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -19 2 v57
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -29 2 v58
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -39 2 v59
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -49 2 v60
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 1 2 v61
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -9 2 v62
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -19 2 v63
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -29 2 v64
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -39 2 v65
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -49 2 v66
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 1 2 v67
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -9 2 v68
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -19 2 v69
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -29 2 v70
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -39 2 v71
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -49 2 v72
+event 3 Ala Ala VAC H2O 3.14 0 0 3 2 2 v73
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -8 2 v74
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -18 2 v75
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -28 2 v76
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -38 2 v77
+event 3 Ala Ala VAC H2O 3.14 0 0 3 -48 2 v78
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 2 2 v79
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -8 2 v80
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -18 2 v81
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -28 2 v82
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -38 2 v83
+event 3 Ala Ala VAC H2O 3.14 0 0 -7 -48 2 v84
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 2 2 v85
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -8 2 v86
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -18 2 v87
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -28 2 v88
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -38 2 v89
+event 3 Ala Ala VAC H2O 3.14 0 0 -17 -48 2 v90
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 2 2 v91
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -8 2 v92
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -18 2 v93
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -28 2 v94
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -38 2 v95
+event 3 Ala Ala VAC H2O 3.14 0 0 -27 -48 2 v96
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 2 2 v97
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -8 2 v98
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -18 2 v99
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -28 2 v100
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -38 2 v101
+event 3 Ala Ala VAC H2O 3.14 0 0 -37 -48 2 v102
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 2 2 v103
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -8 2 v104
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -18 2 v105
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -28 2 v106
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -38 2 v107
+event 3 Ala Ala VAC H2O 3.14 0 0 -47 -48 2 v108
+event 3 Alb Alb VAC H2O 3.14 0 0 3 2 2 v109
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -8 2 v110
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -18 2 v111
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -28 2 v112
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -38 2 v113
+event 3 Alb Alb VAC H2O 3.14 0 0 3 -48 2 v114
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 2 2 v115
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -8 2 v116
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -18 2 v117
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -28 2 v118
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -38 2 v119
+event 3 Alb Alb VAC H2O 3.14 0 0 -7 -48 2 v120
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 2 2 v121
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -8 2 v122
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -18 2 v123
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -28 2 v124
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -38 2 v125
+event 3 Alb Alb VAC H2O 3.14 0 0 -17 -48 2 v126
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 2 2 v127
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -8 2 v128
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -18 2 v129
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -28 2 v130
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -38 2 v131
+event 3 Alb Alb VAC H2O 3.14 0 0 -27 -48 2 v132
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 2 2 v133
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -8 2 v134
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -18 2 v135
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -28 2 v136
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -38 2 v137
+event 3 Alb Alb VAC H2O 3.14 0 0 -37 -48 2 v138
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 2 2 v139
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -8 2 v140
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -18 2 v141
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -28 2 v142
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -38 2 v143
+event 3 Alb Alb VAC H2O 3.14 0 0 -47 -48 2 v144
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 1 all 1 v145
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -9 all 1 v146
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -19 all 1 v147
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -29 all 1 v148
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 2 all 1 v149
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -8 all 1 v150
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -18 all 1 v151
+event 3 OH OHAlbX3 Ala Ala 3.13 0 0 -28 all 1 v152
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 1 all 1 v153
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -9 all 1 v154
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -19 all 1 v155
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -29 all 1 v156
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 2 all 1 v157
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -8 all 1 v158
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -18 all 1 v159
+event 3 OH OHAlaX3 Alb Alb 3.13 0 0 -28 all 1 v160
+event 3 OAla O VAC Ala 2.08e10 1 0.1 1 all 0 v161
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -9 all 0 v162
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -19 all 0 v163
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -29 all 0 v164
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -39 all 0 v165
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -49 all 0 v166
+event 3 OAla O VAC Ala 2.08e10 1 0.1 2 all 0 v167
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -8 all 0 v168
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -18 all 0 v169
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -28 all 0 v170
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -38 all 0 v171
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -48 all 0 v172
+event 3 OAla O VAC Ala 2.08e10 1 0.1 3 all 0 v173
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -7 all 0 v174
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -17 all 0 v175
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -27 all 0 v176
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -37 all 0 v177
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -47 all 0 v178
+event 3 OAla O VAC Ala 2.08e10 1 0.1 4 all 0 v179
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -6 all 0 v180
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -16 all 0 v181
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -26 all 0 v182
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -36 all 0 v183
+event 3 OAla O VAC Ala 2.08e10 1 0.1 -46 all 0 v184
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 1 all 0 v185
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -9 all 0 v186
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -19 all 0 v187
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -29 all 0 v188
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -39 all 0 v189
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -49 all 0 v190
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 2 all 0 v191
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -8 all 0 v192
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -18 all 0 v193
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -28 all 0 v194
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -38 all 0 v195
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -48 all 0 v196
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 3 all 0 v197
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -7 all 0 v198
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -17 all 0 v199
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -27 all 0 v200
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -37 all 0 v201
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -47 all 0 v202
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 4 all 0 v203
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -6 all 0 v204
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -16 all 0 v205
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -26 all 0 v206
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -36 all 0 v207
+event 3 OAlb O VAC Alb 2.08e10 1 0.1 -46 all 0 v208
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 3 all 0 f1
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -7 all 0 f2
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -17 all 0 f3
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -27 all 0 f4
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -37 all 0 f5
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -47 all 0 f6
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 3 all 0 f7
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -7 all 0 f8
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -17 all 0 f9
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -27 all 0 f10
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -37 all 0 f11
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -47 all 0 f12
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 2 all 0 f13
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -8 all 0 f14
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -18 all 0 f15
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -28 all 0 f16
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -38 all 0 f17
+event 4 OAlbX OAlb OH O 2.08e10 1 0.824 -48 all 0 f18
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 2 all 0 f19
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -8 all 0 f20
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -18 all 0 f21
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -28 all 0 f22
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -38 all 0 f23
+event 4 OAlaX OAla OH O 2.08e10 1 0.824 -48 all 0 f24
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 1 all 0 f25
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -9 all 0 f26
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -19 all 0 f27
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -29 all 0 f28
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -39 all 0 f29
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -49 all 0 f30
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 2 all 0 f31
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -8 all 0 f32
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -18 all 0 f33
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -28 all 0 f34
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -38 all 0 f35
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -48 all 0 f36
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 3 all 0 f37
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -7 all 0 f38
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -17 all 0 f39
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -27 all 0 f40
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -37 all 0 f41
+event 4 OH O OAlbX2 OAlbX 2.08e10 1 0.742 -47 all 0 f42
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 1 all 0 f43
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -9 all 0 f44
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -19 all 0 f45
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -29 all 0 f46
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -39 all 0 f47
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -49 all 0 f48
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 2 all 0 f49
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -8 all 0 f50
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -18 all 0 f51
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -28 all 0 f52
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -38 all 0 f53
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -48 all 0 f54
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 3 all 0 f55
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -7 all 0 f56
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -17 all 0 f57
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -27 all 0 f58
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -37 all 0 f59
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -47 all 0 f60
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 4 all 0 f61
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -6 all 0 f62
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -16 all 0 f63
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -26 all 0 f64
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -36 all 0 f65
+event 4 OH O OAlbXOH OAlbX 2.08e10 1 0.655 -46 all 0 f66
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 1 all 0 f67
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -9 all 0 f68
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -19 all 0 f69
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -29 all 0 f70
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -39 all 0 f71
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -49 all 0 f72
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 2 all 0 f73
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -8 all 0 f74
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -18 all 0 f75
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -28 all 0 f76
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -38 all 0 f77
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -48 all 0 f78
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 3 all 0 f79
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -7 all 0 f80
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -17 all 0 f81
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -27 all 0 f82
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -37 all 0 f83
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -47 all 0 f84
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 4 all 0 f85
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -6 all 0 f86
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -16 all 0 f87
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -26 all 0 f88
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -36 all 0 f89
+event 4 OAlbXH2O OAlbXOH O OH 2.08e10 1 0.439 -46 all 0 f90
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 1 all 0 f91
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -9 all 0 f92
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -19 all 0 f93
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -29 all 0 f94
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -39 all 0 f95
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -49 all 0 f96
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 2 all 0 f97
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -8 all 0 f98
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -18 all 0 f99
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -28 all 0 f100
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -38 all 0 f101
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -48 all 0 f102
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 3 all 0 f103
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -7 all 0 f104
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -17 all 0 f105
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -27 all 0 f106
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -37 all 0 f107
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -47 all 0 f108
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 4 all 0 f109
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -6 all 0 f110
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -16 all 0 f111
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -26 all 0 f112
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -36 all 0 f113
+event 4 OH O OAlbOH2 OAlbOH 2.08e10 1 0.53 -46 all 0 f114
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 1 all 0 f115
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -9 all 0 f116
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -19 all 0 f117
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -29 all 0 f118
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -39 all 0 f119
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -49 all 0 f120
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 2 all 0 f121
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -8 all 0 f122
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -18 all 0 f123
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -28 all 0 f124
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -38 all 0 f125
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -48 all 0 f126
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 3 all 0 f127
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -7 all 0 f128
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -17 all 0 f129
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -27 all 0 f130
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -37 all 0 f131
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -47 all 0 f132
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 4 all 0 f133
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -6 all 0 f134
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -16 all 0 f135
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -26 all 0 f136
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -36 all 0 f137
+event 4 OH O OAlbXOH OAlbOH 2.08e10 1 1.03 -46 all 0 f138
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 1 all 0 f139
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -9 all 0 f140
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -19 all 0 f141
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -29 all 0 f142
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -39 all 0 f143
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -49 all 0 f144
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 2 all 0 f145
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -8 all 0 f146
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -18 all 0 f147
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -28 all 0 f148
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -38 all 0 f149
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -48 all 0 f150
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 3 all 0 f151
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -7 all 0 f152
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -17 all 0 f153
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -27 all 0 f154
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -37 all 0 f155
+event 4 OH O OAlaX2 OAlaX 2.08e10 1 1.12 -47 all 0 f156
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 1 all 0 f157
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -9 all 0 f158
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -19 all 0 f159
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -29 all 0 f160
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -39 all 0 f161
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -49 all 0 f162
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 2 all 0 f163
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -8 all 0 f164
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -18 all 0 f165
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -28 all 0 f166
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -38 all 0 f167
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -48 all 0 f168
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 3 all 0 f169
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -7 all 0 f170
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -17 all 0 f171
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -27 all 0 f172
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -37 all 0 f173
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -47 all 0 f174
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 4 all 0 f175
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -6 all 0 f176
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -16 all 0 f177
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -26 all 0 f178
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -36 all 0 f179
+event 4 OH O OAlaXOH OAlaX 2.08e10 1 0.655 -46 all 0 f180
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 1 all 0 f181
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -9 all 0 f182
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -19 all 0 f183
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -29 all 0 f184
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -39 all 0 f185
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -49 all 0 f186
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 2 all 0 f187
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -8 all 0 f188
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -18 all 0 f189
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -28 all 0 f190
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -38 all 0 f191
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -48 all 0 f192
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 3 all 0 f193
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -7 all 0 f194
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -17 all 0 f195
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -27 all 0 f196
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -37 all 0 f197
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -47 all 0 f198
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 4 all 0 f199
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -6 all 0 f200
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -16 all 0 f201
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -26 all 0 f202
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -36 all 0 f203
+event 4 OAlaXH2O OAlaXOH O OH 2.08e10 1 0.439 -46 all 0 f204
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 1 all 0 f205
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -9 all 0 f206
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -19 all 0 f207
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -29 all 0 f208
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -39 all 0 f209
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -49 all 0 f210
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 2 all 0 f211
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -8 all 0 f212
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -18 all 0 f213
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -28 all 0 f214
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -38 all 0 f215
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -48 all 0 f216
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 3 all 0 f217
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -7 all 0 f218
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -17 all 0 f219
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -27 all 0 f220
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -37 all 0 f221
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -47 all 0 f222
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 4 all 0 f223
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -6 all 0 f224
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -16 all 0 f225
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -26 all 0 f226
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -36 all 0 f227
+event 4 OH O OAlaOH2 OAlaOH 2.08e10 1 0.53 -46 all 0 f228
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 1 all 0 f229
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -9 all 0 f230
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -19 all 0 f231
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -29 all 0 f232
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -39 all 0 f233
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -49 all 0 f234
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 2 all 0 f235
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -8 all 0 f236
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -18 all 0 f237
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -28 all 0 f238
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -38 all 0 f239
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -48 all 0 f240
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 3 all 0 f241
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -7 all 0 f242
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -17 all 0 f243
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -27 all 0 f244
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -37 all 0 f245
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -47 all 0 f246
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 4 all 0 f247
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -6 all 0 f248
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -16 all 0 f249
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -26 all 0 f250
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -36 all 0 f251
+event 4 OH O OAlaXOH OAlaOH 2.08e10 1 1.03 -46 all 0 f252
+event 4 OH O O OH 2.08e10 1 0.6 4 1 0 f253
+event 4 OH O O OH 2.08e10 1 0.6 4 -9 0 f254
+event 4 OH O O OH 2.08e10 1 0.6 4 -19 0 f255
+event 4 OH O O OH 2.08e10 1 0.6 4 -29 0 f256
+event 4 OH O O OH 2.08e10 1 0.6 4 -39 0 f257
+event 4 OH O O OH 2.08e10 1 0.6 4 -49 0 f258
+event 4 OH O O OH 2.08e10 1 0.6 -6 1 0 f259
+event 4 OH O O OH 2.08e10 1 0.6 -6 -9 0 f260
+event 4 OH O O OH 2.08e10 1 0.6 -6 -19 0 f261
+event 4 OH O O OH 2.08e10 1 0.6 -6 -29 0 f262
+event 4 OH O O OH 2.08e10 1 0.6 -6 -39 0 f263
+event 4 OH O O OH 2.08e10 1 0.6 -6 -49 0 f264
+event 4 OH O O OH 2.08e10 1 0.6 -16 1 0 f265
+event 4 OH O O OH 2.08e10 1 0.6 -16 -9 0 f266
+event 4 OH O O OH 2.08e10 1 0.6 -16 -19 0 f267
+event 4 OH O O OH 2.08e10 1 0.6 -16 -29 0 f268
+event 4 OH O O OH 2.08e10 1 0.6 -16 -39 0 f269
+event 4 OH O O OH 2.08e10 1 0.6 -16 -49 0 f270
+event 4 OH O O OH 2.08e10 1 0.6 -26 1 0 f271
+event 4 OH O O OH 2.08e10 1 0.6 -26 -9 0 f272
+event 4 OH O O OH 2.08e10 1 0.6 -26 -19 0 f273
+event 4 OH O O OH 2.08e10 1 0.6 -26 -29 0 f274
+event 4 OH O O OH 2.08e10 1 0.6 -26 -39 0 f275
+event 4 OH O O OH 2.08e10 1 0.6 -26 -49 0 f276
+event 4 OH O O OH 2.08e10 1 0.6 -36 1 0 f277
+event 4 OH O O OH 2.08e10 1 0.6 -36 -9 0 f278
+event 4 OH O O OH 2.08e10 1 0.6 -36 -19 0 f279
+event 4 OH O O OH 2.08e10 1 0.6 -36 -29 0 f280
+event 4 OH O O OH 2.08e10 1 0.6 -36 -39 0 f281
+event 4 OH O O OH 2.08e10 1 0.6 -36 -49 0 f282
+event 4 OH O O OH 2.08e10 1 0.6 -46 1 0 f283
+event 4 OH O O OH 2.08e10 1 0.6 -46 -9 0 f284
+event 4 OH O O OH 2.08e10 1 0.6 -46 -19 0 f285
+event 4 OH O O OH 2.08e10 1 0.6 -46 -29 0 f286
+event 4 OH O O OH 2.08e10 1 0.6 -46 -39 0 f287
+event 4 OH O O OH 2.08e10 1 0.6 -46 -49 0 f288
+event 4 OH O O OH 2.08e10 1 0.6 3 1 0 f289
+event 4 OH O O OH 2.08e10 1 0.6 3 -9 0 f290
+event 4 OH O O OH 2.08e10 1 0.6 3 -19 0 f291
+event 4 OH O O OH 2.08e10 1 0.6 3 -29 0 f292
+event 4 OH O O OH 2.08e10 1 0.6 3 -39 0 f293
+event 4 OH O O OH 2.08e10 1 0.6 3 -49 0 f294
+event 4 OH O O OH 2.08e10 1 0.6 -7 1 0 f295
+event 4 OH O O OH 2.08e10 1 0.6 -7 -9 0 f296
+event 4 OH O O OH 2.08e10 1 0.6 -7 -19 0 f297
+event 4 OH O O OH 2.08e10 1 0.6 -7 -29 0 f298
+event 4 OH O O OH 2.08e10 1 0.6 -7 -39 0 f299
+event 4 OH O O OH 2.08e10 1 0.6 -7 -49 0 f300
+event 4 OH O O OH 2.08e10 1 0.6 -17 1 0 f301
+event 4 OH O O OH 2.08e10 1 0.6 -17 -9 0 f302
+event 4 OH O O OH 2.08e10 1 0.6 -17 -19 0 f303
+event 4 OH O O OH 2.08e10 1 0.6 -17 -29 0 f304
+event 4 OH O O OH 2.08e10 1 0.6 -17 -39 0 f305
+event 4 OH O O OH 2.08e10 1 0.6 -17 -49 0 f306
+event 4 OH O O OH 2.08e10 1 0.6 -27 1 0 f307
+event 4 OH O O OH 2.08e10 1 0.6 -27 -9 0 f308
+event 4 OH O O OH 2.08e10 1 0.6 -27 -19 0 f309
+event 4 OH O O OH 2.08e10 1 0.6 -27 -29 0 f310
+event 4 OH O O OH 2.08e10 1 0.6 -27 -39 0 f311
+event 4 OH O O OH 2.08e10 1 0.6 -27 -49 0 f312
+event 4 OH O O OH 2.08e10 1 0.6 -37 1 0 f313
+event 4 OH O O OH 2.08e10 1 0.6 -37 -9 0 f314
+event 4 OH O O OH 2.08e10 1 0.6 -37 -19 0 f315
+event 4 OH O O OH 2.08e10 1 0.6 -37 -29 0 f316
+event 4 OH O O OH 2.08e10 1 0.6 -37 -39 0 f317
+event 4 OH O O OH 2.08e10 1 0.6 -37 -49 0 f318
+event 4 OH O O OH 2.08e10 1 0.6 -47 1 0 f319
+event 4 OH O O OH 2.08e10 1 0.6 -47 -9 0 f320
+event 4 OH O O OH 2.08e10 1 0.6 -47 -19 0 f321
+event 4 OH O O OH 2.08e10 1 0.6 -47 -29 0 f322
+event 4 OH O O OH 2.08e10 1 0.6 -47 -39 0 f323
+event 4 OH O O OH 2.08e10 1 0.6 -47 -49 0 f324
+event 4 OH O O OH 2.08e10 1 0.6 4 2 0 f325
+event 4 OH O O OH 2.08e10 1 0.6 4 -8 0 f326
+event 4 OH O O OH 2.08e10 1 0.6 4 -18 0 f327
+event 4 OH O O OH 2.08e10 1 0.6 4 -28 0 f328
+event 4 OH O O OH 2.08e10 1 0.6 4 -38 0 f329
+event 4 OH O O OH 2.08e10 1 0.6 4 -48 0 f330
+event 4 OH O O OH 2.08e10 1 0.6 -6 2 0 f331
+event 4 OH O O OH 2.08e10 1 0.6 -6 -8 0 f332
+event 4 OH O O OH 2.08e10 1 0.6 -6 -18 0 f333
+event 4 OH O O OH 2.08e10 1 0.6 -6 -28 0 f334
+event 4 OH O O OH 2.08e10 1 0.6 -6 -38 0 f335
+event 4 OH O O OH 2.08e10 1 0.6 -6 -48 0 f336
+event 4 OH O O OH 2.08e10 1 0.6 -16 2 0 f337
+event 4 OH O O OH 2.08e10 1 0.6 -16 -8 0 f338
+event 4 OH O O OH 2.08e10 1 0.6 -16 -18 0 f339
+event 4 OH O O OH 2.08e10 1 0.6 -16 -28 0 f340
+event 4 OH O O OH 2.08e10 1 0.6 -16 -38 0 f341
+event 4 OH O O OH 2.08e10 1 0.6 -16 -48 0 f342
+event 4 OH O O OH 2.08e10 1 0.6 -26 2 0 f343
+event 4 OH O O OH 2.08e10 1 0.6 -26 -8 0 f344
+event 4 OH O O OH 2.08e10 1 0.6 -26 -18 0 f345
+event 4 OH O O OH 2.08e10 1 0.6 -26 -28 0 f346
+event 4 OH O O OH 2.08e10 1 0.6 -26 -38 0 f347
+event 4 OH O O OH 2.08e10 1 0.6 -26 -48 0 f348
+event 4 OH O O OH 2.08e10 1 0.6 -36 2 0 f349
+event 4 OH O O OH 2.08e10 1 0.6 -36 -8 0 f350
+event 4 OH O O OH 2.08e10 1 0.6 -36 -18 0 f351
+event 4 OH O O OH 2.08e10 1 0.6 -36 -28 0 f352
+event 4 OH O O OH 2.08e10 1 0.6 -36 -38 0 f353
+event 4 OH O O OH 2.08e10 1 0.6 -36 -48 0 f354
+event 4 OH O O OH 2.08e10 1 0.6 -46 2 0 f355
+event 4 OH O O OH 2.08e10 1 0.6 -46 -8 0 f356
+event 4 OH O O OH 2.08e10 1 0.6 -46 -18 0 f357
+event 4 OH O O OH 2.08e10 1 0.6 -46 -28 0 f358
+event 4 OH O O OH 2.08e10 1 0.6 -46 -38 0 f359
+event 4 OH O O OH 2.08e10 1 0.6 -46 -48 0 f360
+event 4 OH O O OH 2.08e10 1 0.6 3 2 0 f361
+event 4 OH O O OH 2.08e10 1 0.6 3 -8 0 f362
+event 4 OH O O OH 2.08e10 1 0.6 3 -18 0 f363
+event 4 OH O O OH 2.08e10 1 0.6 3 -28 0 f364
+event 4 OH O O OH 2.08e10 1 0.6 3 -38 0 f365
+event 4 OH O O OH 2.08e10 1 0.6 3 -48 0 f366
+event 4 OH O O OH 2.08e10 1 0.6 -7 2 0 f367
+event 4 OH O O OH 2.08e10 1 0.6 -7 -8 0 f368
+event 4 OH O O OH 2.08e10 1 0.6 -7 -18 0 f369
+event 4 OH O O OH 2.08e10 1 0.6 -7 -28 0 f370
+event 4 OH O O OH 2.08e10 1 0.6 -7 -38 0 f371
+event 4 OH O O OH 2.08e10 1 0.6 -7 -48 0 f372
+event 4 OH O O OH 2.08e10 1 0.6 -17 2 0 f373
+event 4 OH O O OH 2.08e10 1 0.6 -17 -8 0 f374
+event 4 OH O O OH 2.08e10 1 0.6 -17 -18 0 f375
+event 4 OH O O OH 2.08e10 1 0.6 -17 -28 0 f376
+event 4 OH O O OH 2.08e10 1 0.6 -17 -38 0 f377
+event 4 OH O O OH 2.08e10 1 0.6 -17 -48 0 f378
+event 4 OH O O OH 2.08e10 1 0.6 -27 2 0 f379
+event 4 OH O O OH 2.08e10 1 0.6 -27 -8 0 f380
+event 4 OH O O OH 2.08e10 1 0.6 -27 -18 0 f381
+event 4 OH O O OH 2.08e10 1 0.6 -27 -28 0 f382
+event 4 OH O O OH 2.08e10 1 0.6 -27 -38 0 f383
+event 4 OH O O OH 2.08e10 1 0.6 -27 -48 0 f384
+event 4 OH O O OH 2.08e10 1 0.6 -37 2 0 f385
+event 4 OH O O OH 2.08e10 1 0.6 -37 -8 0 f386
+event 4 OH O O OH 2.08e10 1 0.6 -37 -18 0 f387
+event 4 OH O O OH 2.08e10 1 0.6 -37 -28 0 f388
+event 4 OH O O OH 2.08e10 1 0.6 -37 -38 0 f389
+event 4 OH O O OH 2.08e10 1 0.6 -37 -48 0 f390
+event 4 OH O O OH 2.08e10 1 0.6 -47 2 0 f391
+event 4 OH O O OH 2.08e10 1 0.6 -47 -8 0 f392
+event 4 OH O O OH 2.08e10 1 0.6 -47 -18 0 f393
+event 4 OH O O OH 2.08e10 1 0.6 -47 -28 0 f394
+event 4 OH O O OH 2.08e10 1 0.6 -47 -38 0 f395
+event 4 OH O O OH 2.08e10 1 0.6 -47 -48 0 f396
+event 4 OH O OH VAC 2.08e10 1 1.26 4 3 0 f397
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -7 0 f398
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -17 0 f399
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -27 0 f400
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -37 0 f401
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -47 0 f402
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 3 0 f403
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -7 0 f404
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -17 0 f405
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -27 0 f406
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -37 0 f407
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -47 0 f408
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 3 0 f409
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -7 0 f410
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -17 0 f411
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -27 0 f412
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -37 0 f413
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -47 0 f414
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 3 0 f415
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -7 0 f416
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -17 0 f417
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -27 0 f418
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -37 0 f419
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -47 0 f420
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 3 0 f421
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -7 0 f422
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -17 0 f423
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -27 0 f424
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -37 0 f425
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -47 0 f426
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 3 0 f427
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -7 0 f428
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -17 0 f429
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -27 0 f430
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -37 0 f431
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -47 0 f432
+event 4 OH O OH VAC 2.08e10 1 1.26 4 4 0 f433
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -6 0 f434
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -16 0 f435
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -26 0 f436
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -36 0 f437
+event 4 OH O OH VAC 2.08e10 1 1.26 4 -46 0 f438
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 4 0 f439
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -6 0 f440
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -16 0 f441
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -26 0 f442
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -36 0 f443
+event 4 OH O OH VAC 2.08e10 1 1.26 -6 -46 0 f444
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 4 0 f445
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -6 0 f446
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -16 0 f447
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -26 0 f448
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -36 0 f449
+event 4 OH O OH VAC 2.08e10 1 1.26 -16 -46 0 f450
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 4 0 f451
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -6 0 f452
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -16 0 f453
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -26 0 f454
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -36 0 f455
+event 4 OH O OH VAC 2.08e10 1 1.26 -26 -46 0 f456
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 4 0 f457
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -6 0 f458
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -16 0 f459
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -26 0 f460
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -36 0 f461
+event 4 OH O OH VAC 2.08e10 1 1.26 -36 -46 0 f462
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 4 0 f463
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -6 0 f464
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -16 0 f465
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -26 0 f466
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -36 0 f467
+event 4 OH O OH VAC 2.08e10 1 1.26 -46 -46 0 f468
+event 4 OH O OH VAC 2.08e10 1 1.26 3 3 0 f469
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -7 0 f470
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -17 0 f471
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -27 0 f472
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -37 0 f473
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -47 0 f474
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 3 0 f475
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -7 0 f476
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -17 0 f477
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -27 0 f478
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -37 0 f479
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -47 0 f480
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 3 0 f481
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -7 0 f482
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -17 0 f483
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -27 0 f484
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -37 0 f485
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -47 0 f486
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 3 0 f487
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -7 0 f488
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -17 0 f489
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -27 0 f490
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -37 0 f491
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -47 0 f492
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 3 0 f493
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -7 0 f494
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -17 0 f495
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -27 0 f496
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -37 0 f497
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -47 0 f498
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 3 0 f499
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -7 0 f500
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -17 0 f501
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -27 0 f502
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -37 0 f503
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -47 0 f504
+event 4 OH O OH VAC 2.08e10 1 1.26 3 4 0 f505
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -6 0 f506
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -16 0 f507
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -26 0 f508
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -36 0 f509
+event 4 OH O OH VAC 2.08e10 1 1.26 3 -46 0 f510
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 4 0 f511
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -6 0 f512
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -16 0 f513
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -26 0 f514
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -36 0 f515
+event 4 OH O OH VAC 2.08e10 1 1.26 -7 -46 0 f516
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 4 0 f517
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -6 0 f518
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -16 0 f519
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -26 0 f520
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -36 0 f521
+event 4 OH O OH VAC 2.08e10 1 1.26 -17 -46 0 f522
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 4 0 f523
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -6 0 f524
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -16 0 f525
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -26 0 f526
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -36 0 f527
+event 4 OH O OH VAC 2.08e10 1 1.26 -27 -46 0 f528
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 4 0 f529
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -6 0 f530
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -16 0 f531
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -26 0 f532
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -36 0 f533
+event 4 OH O OH VAC 2.08e10 1 1.26 -37 -46 0 f534
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 4 0 f535
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -6 0 f536
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -16 0 f537
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -26 0 f538
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -36 0 f539
+event 4 OH O OH VAC 2.08e10 1 1.26 -47 -46 0 f540
+#Time Set (s)
+pulse_time		1    	5  #T1    T3
+purge_time	    5 	    5  #T2    T4  and cycle = T1+T2+T3+T4
+
+
+ 
+
+#Temperature Set (K)
+temperature	393
+
+
+#Output
+diag_style      ald/TMA stats yes list events QCM VAC O OH ala_total alb_total Ala OHAlaX3 OAlaX2 OAlaX2H2O OAlaXOH OAlaX OAlaOH OAlaOH2 AlaOH AlaOH2 Alb OHAlbX3 OAlbX2 OAlbX2H2O OAlbXOH OAlbX OAlbOH OAlbOH2 AlbOH AlbOH2 OAla OAlb OHG XG type4_total type2_total
+stats           .001
+dump            1 text .01 dump.ald  id i1 i2 x y z
+
+run            320 
