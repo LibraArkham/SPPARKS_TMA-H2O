@@ -25,3 +25,11 @@ The provided structure file data.ald represents a 10×10 surface rather than the
 An additional instruction.pdf is included to guide users on how to manually modify the in.ald file for different temperatures or surface configurations.
 
 For more detailed explanations of syntax, commands, and KMC algorithms, please consult the official SPPARKS manual.
+
+  
+  
+  
+  
+  
+Enjoy!  
+Yichen Zou 2025/2/12
