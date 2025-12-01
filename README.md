@@ -1,6 +1,6 @@
 # SPPARKS_TMA-H2O
-SPPARKS for TMA&amp;H2O ALD
-KMC Model for Al₂O₃ ALD using Customized SPPARKS
+SPPARKS for TMA&amp;H2O ALD  
+KMC Model for Al₂O₃ ALD using Customized SPPARKS  
 This repository contains a customized SPPARKS implementation developed for simulating trimethylaluminum (TMA)–based atomic layer deposition of Al₂O₃ using a lattice kinetic Monte Carlo model. The code modifications and example files allow readers to reproduce the simulations presented in our manuscript.
 
 Quick Start Guide  
